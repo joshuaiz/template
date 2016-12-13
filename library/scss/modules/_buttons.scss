@@ -1,0 +1,91 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Button Styles
+
+Buttons are a pretty important part of your site's style, so it's
+important to have a consistent baseline for them. Use this stylesheet
+to create all kinds of buttons.
+
+Helpful Links:
+http://galp.in/blog/2011/08/02/the-ui-guide-part-1-buttons/
+
+******************************************************************/
+
+/*********************
+BUTTON DEFAULTS
+We're gonna use a placeholder selector here
+so we can use common styles. We then use this
+to load up the defaults in all our buttons.
+
+Here's a quick video to show how it works:
+http://www.youtube.com/watch?v=hwdVpKiJzac
+
+*********************/
+
+%btn {
+  display: inline-block;
+  position: relative;
+  font-family: $sans;
+  text-decoration: none;
+  color: $white;
+  font-size: 21px;
+  line-height: 34px;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 2px;
+  border: 0;
+  cursor: pointer;
+  margin-bottom: .5em;
+  @include transition(background-color 0.14s ease-in-out);
+
+  // hovering on the btn
+  &:hover, &:focus {
+    color: $white;
+    text-decoration: none;
+    outline: none;
+  } // end hover
+
+  // clicking on the button
+  &:active {
+    top: 1px; // adds a tiny hop to the click
+  } // end active
+
+} // end .button
+
+
+/*
+An example button.
+You can use this example if you want. Just replace all the variables
+and it will create a button dependant on those variables.
+*/
+.blue-btn, button {
+  @extend %btn; // here we load the btn defaults
+  background-color: $sb-blue;
+  border-bottom: 6px solid darken($sb-blue, 8%);
+  &:hover,
+  &:focus {
+    background-color: darken($sb-blue, 4%);
+  } // end hover
+
+  &:active {
+    background-color: darken($sb-blue, 5%);
+  } // end active
+
+} // end blue button
+
+.purple-btn {
+  @extend %btn; // here we load the btn defaults
+  background-color: $sb-purple;
+  border-bottom: 6px solid darken($sb-purple, 8%);
+  &:hover,
+  &:focus {
+    background-color: darken($sb-purple, 4%);
+  } // end hover
+
+  &:active {
+    background-color: darken($sb-purple, 5%);
+  } // end active
+
+}
