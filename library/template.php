@@ -223,6 +223,24 @@ function template_theme_support() {
 	    )
 	);
 
+	// Custom Header Image
+	add_theme_support( 'custom-header', array( 
+		'default-image'          => get_template_directory_uri() . '/library/images/header-image.png',
+  		'default-text-color'     => 'ffffff',
+  		'header-text'            => true,
+  		'uploads'                => true,
+  		'wp-head-callback'       => 'template_style_header'
+	) );
+
+	// Custom Logo
+	add_theme_support( 'custom-logo', array(
+    'height'      => 100,
+    'width'       => 400,
+    'flex-height' => true,
+    'flex-width'  => true,
+    'header-text' => array( 'site-title', 'site-description' ),
+	) );
+
 	// rss thingy
 	add_theme_support('automatic-feed-links');
 
@@ -242,27 +260,14 @@ function template_theme_support() {
 	add_theme_support( 'title-tag' );
 
 	// Enable support for HTML5 markup.
-	add_theme_support( 'html5', array(
-		'comment-list',
-		'search-form',
-		'comment-form'
-	) );
+	add_theme_support( 'html5', array( 
+		'comment-list', 
+		'comment-form', 
+		'search-form', 
+		'gallery', 
+		'caption' ) 
+	);
 
-	// Custom Header Image
-	add_theme_support( 'custom-header', array( 
-		'default-image'          => get_template_directory_uri() . '/library/images/header-image.png',
-  		'default-text-color'     => 'ffffff',
-  		'header-text'            => true,
-  		'uploads'                => true,
-  		'wp-head-callback'       => 'template_style_header'
-	) );
-
-
-	// Add WooCommerce support. This function only removes the warning in the WP Admin. To fully support WooCommerce you will need to add some stuff to your product loops. See here: https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
-	add_action( 'after_setup_theme', 'woocommerce_support' );
-	function woocommerce_support() {
-    	add_theme_support( 'woocommerce' );
-	}
 
 	/* Post Formats
 	Ahhhh yes, the wild and wonderful world of Post Formats. 
@@ -290,6 +295,12 @@ function template_theme_support() {
 	// );
 
 } /* end template theme support */
+
+// Add WooCommerce support. This function only removes the warning in the WP Admin. To fully support WooCommerce you will need to add some stuff to your product loops. See here: https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
 
 
 /****************************************
@@ -458,7 +469,7 @@ function template_excerpt_more($more) {
 
 /*
 ****************************************
-*      Template Special Functions      *
+*      TEMPLATE SPECIAL FUNCTIONS      *
 ****************************************
 */
 
@@ -536,14 +547,10 @@ function template_custom_quicktags() {
 // Load dashicons on the front end
 // To use, go here and copy the css/html for the dashicon you want: https://developer.wordpress.org/resource/dashicons/
 // Example: <span class="dashicons dashicons-wordpress"></span>
-
 add_action( 'wp_enqueue_scripts', 'template_load_dashicons' );
-
 function template_load_dashicons() {
-
     wp_enqueue_style( 'dashicons' );
 }
-
 
 /*****************************************
 * LET'S ROCK SOME TEMPLATE THEME OPTIONS *

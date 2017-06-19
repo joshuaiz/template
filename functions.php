@@ -12,14 +12,11 @@ sidebars, comments, etc.
 // LOAD TEMPLATE (if you remove this, the theme will break)
 require_once( 'library/template.php' );
 
-// LOAD Osseous custom functions. The theme will (probably) break without this too.
-// require_once( 'library/osseous.php' );
-
 // CUSTOMIZE THE WORDPRESS ADMIN 
 require_once( 'library/admin.php' );
 
 /*********************
-LAUNCH BONES
+LAUNCH TEMPLATE
 Let's get everything up and running.
 *********************/
 
@@ -112,8 +109,6 @@ new image size.
 */
 
 
-
-
 /************* ACTIVE SIDEBARS ********************/
 
 // Sidebars & Widgetizes Areas
@@ -195,6 +190,84 @@ function template_comments( $comment, $args, $depth ) {
 } // don't remove this bracket!
 
 
+add_action( 'comment_form_before', function()
+{
+    if( class_exists( 'WPSE_Rearrange_Comment_Fields' ) )
+    {
+        $fields = apply_filters( 
+            'wpse_comment_fields', 
+            [ 'comment', 'author', 'url', 'email', 'submit' ]
+        );
+
+        $o = new WPSE_Rearrange_Comment_fields;
+        $o->set_fields( $fields )
+          ->init();
+    }
+});
+
+class WPSE_Rearrange_Comment_Fields
+{
+    private $html       = [];
+    private $defaults   = [];
+    private $fields     = [];
+
+    public function set_fields( array $fields )
+    {
+        $this->fields = $fields;
+        return $this;
+    }
+
+    public function init()
+    {
+        // Default
+        $this->defaults = [ 'comment', 'author', 'url', 'email', 'submit' ];
+
+        // Check for defaults
+        if( empty( $this->fields ) )
+            $this->fields = $this->defaults;
+
+        // Hooks
+        add_action( 'comment_form',                 [$this, 'display'],                     PHP_INT_MAX );
+        add_filter( 'comment_form_field_comment',   [$this, 'comment_form_field_comment'],  PHP_INT_MAX );
+        add_filter( 'comment_form_submit_field',    [$this, 'comment_form_submit_field'],   PHP_INT_MAX );
+        foreach( [ 'author', 'url', 'email' ] as $field )
+            add_filter( "comment_form_field_{$field}",  [$this, 'comment_form_field'], PHP_INT_MAX );       
+    }
+
+    public function display()
+    {
+        // Display fields in the custom order                   
+        $html = '';
+        foreach( (array) $this->fields as $field )
+        {
+            if( in_array( $field, $this->defaults ) ) 
+                $html .= $this->html[$field]; 
+        }
+        echo $html;
+    }
+
+    public function comment_form_submit_field( $submit_field )
+    {
+        $this->html['submit'] = $submit_field;
+        return '';
+    }
+
+    public function comment_form_field_comment( $comment_field )
+    {
+        $this->html['comment'] = $comment_field;
+        return '';
+    }
+
+    public function comment_form_field( $field )
+    {
+        $key = str_replace( 'comment_form_field_', '', current_filter() );
+        $this->html[$key] = $field;
+        return '';
+    }
+
+} // end class
+
+
 /*
 Use this to add Google or other web fonts.
 */
@@ -235,28 +308,10 @@ function html_schema() {
 }
 
 
-// Custom js for theme customizer
-// function template_customizer_js() {
-//   wp_enqueue_script(
-//     'template_theme_customizer',
-//     get_template_directory_uri() . '/library/js/theme-customizer.js',
-//     array( 'jquery', 'customize-preview' ),
-//     '',
-//     true
-// );
+// function my_update_acf_license() {
+//   acf_pro_update_license( 'b3JkZXJfaWQ9NDc2NDF8dHlwZT1wZXJzb25hbHxkYXRlPTIwMTUtMDEtMTMgMDA6NDI6MDI=' );
 // }
-
-// function template_customizer_js() {
-//   wp_enqueue_script( 'template_theme_customizer', get_template_directory_uri() . '/library/js/theme-customizer.js' );
-// }
-// // add_action( 'customize_preview_init', 'template_customizer_js' );
-// add_action( 'admin_enqueue_scripts', 'template_customizer_js' );
-
-
-function my_update_acf_license() {
-  acf_pro_update_license( 'b3JkZXJfaWQ9NDc2NDF8dHlwZT1wZXJzb25hbHxkYXRlPTIwMTUtMDEtMTMgMDA6NDI6MDI=' );
-}
-add_action('init', 'my_update_acf_license');
+// add_action('init', 'my_update_acf_license');
 
 /* DON'T DELETE THIS CLOSING TAG */ 
 ?>
