@@ -252,5 +252,11 @@ function html_schema() {
 // // add_action( 'customize_preview_init', 'template_customizer_js' );
 // add_action( 'admin_enqueue_scripts', 'template_customizer_js' );
 
+
+function my_update_acf_license() {
+  acf_pro_update_license( 'b3JkZXJfaWQ9NDc2NDF8dHlwZT1wZXJzb25hbHxkYXRlPTIwMTUtMDEtMTMgMDA6NDI6MDI=' );
+}
+add_action('init', 'my_update_acf_license');
+
 /* DON'T DELETE THIS CLOSING TAG */ 
 ?>
