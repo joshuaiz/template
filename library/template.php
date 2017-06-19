@@ -119,10 +119,6 @@ function template_scripts_and_styles() {
 
   global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
 
-  // if (is_admin()) {
-  // 	wp_register_script( 'customizer-js', get_stylesheet_directory_uri() . '/library/js/theme-customizer.js', array( 'jquery', 'customize-preview' ), '', true );
-  // }
-
   if (!is_admin()) {
 
 		// modernizr (without media query polyfill)
@@ -149,7 +145,6 @@ function template_scripts_and_styles() {
 
 		$wp_styles->add_data( 'template-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
 
-		
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'template-js' );
 
@@ -261,6 +256,13 @@ function template_theme_support() {
   		'uploads'                => true,
   		'wp-head-callback'       => 'template_style_header'
 	) );
+
+
+	// Add WooCommerce support. This function only removes the warning in the WP Admin. To fully support WooCommerce you will need to add some stuff to your product loops. See here: https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
+	add_action( 'after_setup_theme', 'woocommerce_support' );
+	function woocommerce_support() {
+    	add_theme_support( 'woocommerce' );
+	}
 
 	/* Post Formats
 	Ahhhh yes, the wild and wonderful world of Post Formats. 
@@ -463,17 +465,28 @@ function template_excerpt_more($more) {
 // Body Class functions
 // Adds more slugs to body class so we can style individual pages + posts.
 // Page Slug Body Class
-function template_page_slug_body_class( $classes ) {
+function template_body_class( $classes ) {
 global $post;
-if ( isset( $post ) ) {
-/* $classes[] = $post->post_type . '-' . $post->post_name; *//*Un comment this if you want the post_type-post_name body class */
-$pagetemplate = get_post_meta( $post->ID, '_wp_page_template', true);
-$classes[] = sanitize_html_class( str_replace( '.', '-', $pagetemplate ), '' );
-$classes[] = $post->post_name;
-}
+	if ( isset( $post ) ) {
+	/* $classes[] = $post->post_type . '-' . $post->post_name; *//*Un comment this if you want the post_type-post_name body class */
+	$pagetemplate = get_post_meta( $post->ID, '_wp_page_template', true);
+	$classes[] = sanitize_html_class( str_replace( '.', '-', $pagetemplate ), '' );
+	$classes[] = $post->post_name;
+	}
 
 if (is_page()) {
         global $post;
+        if ( $post->post_parent ) {
+            # Parent post name/slug
+            $parent = get_post( $post->post_parent );
+            $classes[] = $parent->post_name;
+
+            # Parent template name
+            $parent_template = get_post_meta( $parent->ID, '_wp_page_template', true);
+            
+            if ( !empty($parent_template) )
+                $classes[] = 'template-'.sanitize_html_class( str_replace( '.', '-', $parent_template ), '' );
+        }
         
         // If we *do* have an ancestors list, process it
         // http://codex.wordpress.org/Function_Reference/get_post_ancestors
@@ -492,33 +505,9 @@ if (is_page()) {
     }
 
 return $classes;
+
 }
-add_filter( 'body_class', 'template_page_slug_body_class' );
-
-
-// Page template body classes
-function template_page_template_body_class( $classes ) {
-    global $post;
-
-    # Page
-    if ( is_page() ) {
-        # Has parent / is sub-page
-        if ( $post->post_parent ) {
-            # Parent post name/slug
-            $parent = get_post( $post->post_parent );
-            $classes[] = $parent->post_name;
-
-            # Parent template name
-            $parent_template = get_post_meta( $parent->ID, '_wp_page_template', true);
-            
-            if ( !empty($parent_template) )
-                $classes[] = 'template-'.sanitize_html_class( str_replace( '.', '-', $parent_template ), '' );
-        }
-    }
-
-    return $classes;
-}
-add_filter( 'body_class', 'template_page_template_body_class' );
+add_filter( 'body_class', 'template_body_class' );
 
 
 // Let's add some extra Quicktags
@@ -543,33 +532,6 @@ function template_custom_quicktags() {
   }
 
 }
-
-// Automatically grab the post thumbnail for excerpts.
-add_filter( 'the_excerpt', 'excerpt_thumbnail' );
-
-function template_excerpt_thumbnail($excerpt) { 
-  if(is_single()) return $excerpt; global $post;
-
-  if ( has_post_thumbnail() ) { 
-    $img .= '<a href="'.get_permalink($post->ID).'">'.get_the_post_thumbnail($post->ID, 'custom_thumb').'</a>'; 
-  } else { 
-    $img = ''; 
-  } 
-  return $img.$excerpt;
-}
-
-// Highlight search term
-// Uncomment to use
-// function template_highlight_search_term($text) {
-//     if(is_search()){
-// 		$keys = implode('|', explode(' ', get_search_query()));
-// 		$text = preg_replace('/(' . $keys .')/iu', '<span class="search-term">\0</span>', $text);
-// 	}
-//     return $text;
-// }
-// add_filter('the_excerpt', 'highlight_search_term');
-// add_filter('the_title', 'highlight_search_term');
-
 
 // Load dashicons on the front end
 // To use, go here and copy the css/html for the dashicon you want: https://developer.wordpress.org/resource/dashicons/
