@@ -200,14 +200,20 @@ LAYOUT & GRID STYLES
 /*********************
 HEADER STYLES
 *********************/
+#logo { display: inline-block; width: 300px; margin-right: 1.5em; padding: 1em 0; position: relative; top: 3px; }
+
+#logo img { display: block; }
+
 /*********************
 NAVIGATION STYLES
 *********************/
+.header-nav { display: inline-block; }
+
 .nav { border: 0; /* end .menu ul li */ /* highlight current page */ /* end current highlighters */ }
 
 .nav ul { background: #323944; margin-top: 0; }
 
-.nav li { float: left; position: relative; /* plan your menus and drop-downs wisely. */ /* showing sub-menus */ }
+.nav li { float: left; position: relative; list-style: none; /* plan your menus and drop-downs wisely. */ /* showing sub-menus */ }
 
 .nav li a { border-bottom: 0; /* you can use hover styles here even though this size has the possibility of being a mobile device. */ }
 

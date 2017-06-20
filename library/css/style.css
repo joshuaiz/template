@@ -1,4 +1,4 @@
-/*  Made with Template by studio.bio Based on Bones by Eddie Machado. One love :) CodeKit 3 test Refresh testing */
+/*  Made with Template by studio.bio Based on Bones by Eddie Machado. One love :) */
 /******************************************************************
 Site Name:
 Author:
@@ -512,6 +512,12 @@ GENERAL STYLES
 *********************/
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; font-size: 100%; line-height: 1.5; letter-spacing: -0.19px; color: #3f3f3f; background-color: #eaedf2; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
+img { max-width: 100%; height: auto; }
+
+.list-square { list-style-type: square; margin-bottom: 1.5em; list-style-position: inside; }
+
+.nostyle { margin-left: 0; padding-left: 0; list-style-type: none; }
+
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
@@ -559,7 +565,7 @@ LAYOUT & GRID STYLES
 /*********************
 LINK STYLES
 *********************/
-a, a:visited { color: #0088cc; text-decoration: none; font-weight: 500; /* on hover */ /* on click */ /* mobile tap color */ }
+a, a:visited { color: #0088cc; text-decoration: none; /* on hover */ /* on click */ /* mobile tap color */ }
 
 a:hover, a:focus, a:visited:hover, a:visited:focus { color: #00699e; text-decoration: underline; }
 
@@ -589,11 +595,9 @@ HEADER STYLES
 *********************/
 .header { background-color: #111111; }
 
+#site-title { margin: 1em 0; font-size: 1.5em; }
+
 #banner .header-image { max-width: 100%; height: auto; }
-
-#logo { margin: 1em 0; }
-
-#logo a { color: #fff; font-size: 1.5em; text-decoration: none; }
 
 /*********************
 NAVIGATION STYLES
@@ -906,12 +910,15 @@ LAYOUT & GRID STYLES
   /*********************
 HEADER STYLES
 *********************/
+  #logo { display: inline-block; width: 300px; margin-right: 1.5em; padding: 1em 0; position: relative; top: 3px; }
+  #logo img { display: block; }
   /*********************
 NAVIGATION STYLES
 *********************/
+  .header-nav { display: inline-block; }
   .nav { border: 0; /* end .menu ul li */ /* highlight current page */ /* end current highlighters */ }
   .nav ul { background: #323944; margin-top: 0; }
-  .nav li { float: left; position: relative; /* plan your menus and drop-downs wisely. */ /* showing sub-menus */ }
+  .nav li { float: left; position: relative; list-style: none; /* plan your menus and drop-downs wisely. */ /* showing sub-menus */ }
   .nav li a { border-bottom: 0; /* you can use hover styles here even though this size has the possibility of being a mobile device. */ }
   .nav li a:hover, .nav li a:focus { color: #fff; text-decoration: underline; }
   .nav li ul.sub-menu, .nav li ul.children { margin-top: 0; border: 1px solid #ccc; border-top: 0; position: absolute; visibility: hidden; z-index: 8999; /* highlight sub-menu current page */ }

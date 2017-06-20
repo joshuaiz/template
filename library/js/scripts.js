@@ -192,6 +192,7 @@ viewport = updateViewportDimensions();
 
 if (viewport.width >= 768) {
 
+  // Sticky header (comment or delete to remove)
   $('header.header').scrollToFixed();
 
 }

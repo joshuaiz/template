@@ -93,14 +93,11 @@
 
 				<div id="inner-header" class="wrap cf">
 
-					<?php // to use a image just replace the bloginfo('title') with your img src ?>
-					<div id="logo" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><span class="site-title"><?php bloginfo('title'); ?></span></a></div>
+					<!-- <div id="site-title" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></div> -->
 
-					<?php // if you'd like to use the site description un-comment the below <p></p> ?>
-					<p class="site-description"><?php bloginfo('description'); ?></p>
+					<div id="logo" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/library/images/template_logo.png" /></a></div>
 
-
-					<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<nav class="header-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 					<?php // see all default args here: https://developer.wordpress.org/reference/functions/wp_nav_menu/ ?>
 						<?php wp_nav_menu(array(
     					         'container' => false,                           // remove nav container
@@ -111,6 +108,9 @@
 						)); ?>
 
 					</nav>
+
+					<?php // if you'd like to use the site description un-comment the below <p></p>. If not, leave as-is or delete it. ?>
+					<!-- <p class="site-description"><?php bloginfo('description'); ?></p> -->
 
 				</div>
 

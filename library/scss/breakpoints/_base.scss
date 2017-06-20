@@ -26,15 +26,30 @@ body {
   	-moz-osx-font-smoothing: grayscale;
 }
 
+img { // responsive images
+	max-width: 100%;
+	height: auto;
+}
+
+.list-square {
+	list-style-type: square;
+	margin-bottom: 1.5em;
+	list-style-position: inside;
+}
+
+.nostyle { 
+	margin-left: 0; 
+	padding-left: 0; 
+	list-style-type: none;
+}
+
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
 ********************/
 
 .rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
-.home {
-	
-}                          /* home page */
+.home {}                          /* home page */
 .blog {}                          /* blog template page */
 .archive {}                       /* archive page */
 .date {}                          /* date archive page */
@@ -85,7 +100,6 @@ LINK STYLES
 a, a:visited {
 	color: $link-color;
 	text-decoration: none;
-	font-weight: 500;
 
 	/* on hover */
 	&:hover, &:focus {
@@ -179,6 +193,12 @@ HEADER STYLES
 	background-color: $sb-black;
 }
 
+	#site-title {
+		margin: 1em 0;
+		font-size: 1.5em;
+		// display: none;
+	}
+
 	#banner {
 		.header-image {
 			max-width: 100%;
@@ -186,15 +206,7 @@ HEADER STYLES
 		}
 	}
 
-	#logo {
-		margin: 1em 0;
-
-		a {
-			color: $white;
-			font-size: 1.5em;
-			text-decoration: none;
-		}
-	}
+	#logo {}
 
 /*********************
 NAVIGATION STYLES

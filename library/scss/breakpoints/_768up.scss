@@ -31,13 +31,29 @@ LAYOUT & GRID STYLES
 HEADER STYLES
 *********************/
 
-.header {}
+.header {
+	// height: 76px;
+}
 
-	#logo {}
+	#logo {
+		display: inline-block;
+		width: 300px;
+		margin-right: 1.5em;
+		padding: 1em 0;
+		position: relative;
+    	top: 3px;
+		img {
+			display: block;
+		}			
+	}
 
 /*********************
 NAVIGATION STYLES
 *********************/
+
+.header-nav {
+	display: inline-block;
+}
 
 .nav {
 	border: 0;
@@ -48,6 +64,7 @@ NAVIGATION STYLES
 	li {
 		float: left;
 		position: relative;
+		list-style: none;
 
 		a {
 			border-bottom: 0;
