@@ -68,6 +68,8 @@
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
 
+		<?php echo '<!-- ' . get_current_template() . ' -->'; ?>
+
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
@@ -79,7 +81,7 @@
 				<?php // Customizer Header Image section. Uncomment to use. ?>
 				<?php if( get_header_image() != "" ) { 
 
-					if (is_home() || is_front_page() ) { ?>
+					if ( is_front_page() ) { ?>
 
             		<div id="banner">                
             			

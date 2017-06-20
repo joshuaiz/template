@@ -9,8 +9,8 @@ sidebars, comments, etc.
 */
 
 
-// LOAD TEMPLATE (if you remove this, the theme will break)
-// require_once( 'library/template.php' );
+// LOAD TEMPLATE DEVELOPMENT FUNCTIONS (not required but helper stuff for debugging and development)
+require_once( 'library/template.php' );
 
 // CUSTOMIZE THE WORDPRESS ADMIN 
 require_once( 'library/admin.php' );

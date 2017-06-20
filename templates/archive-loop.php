@@ -17,7 +17,11 @@ the_archive_description( '<div class="taxonomy-description">', '</div>' );
 
 		<section class="entry-content cf">
 
-			<?php the_post_thumbnail( 'template-thumb-300' ); ?>
+			<div class="post-thumbnail">
+
+				<?php the_post_thumbnail( 'template-thumb-300' ); ?>
+
+			</div>
 
 			<?php the_excerpt(); ?>
 
