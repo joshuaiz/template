@@ -11,7 +11,7 @@ With that in mind, I've removed some things I never used in Bones (like Link Pag
 
 Edit this, fork it, change it, delete it - whatever. As Eddie might say: it's your world. But I hope you make something cool with it.
 
-### A Little History
+## A Little History
 My introduction to Bones came four years ago after trying out just about every starter theme out there. Once I found Bones I was hooked and have used it ever since on hundreds of projects. Bones got me to use Sass/SCSS, taught me a ton about WordPress, how themes *really* work, and made me a better developer.
 
 Yet, over time I found I was making the same changes to Bones at the start of every project and this was taking up valuable time. Thus, I created the predecessor to this theme called 'Osseous' which included some of the changes found in Template. Osseous literally means: 'of, relating to, or composed of bone' and was a good departure point.
@@ -33,14 +33,13 @@ Template picks up where Osseous left off and takes things a bit further with 'te
 - default .scss classes
 ...and more.
 
-###Recommended Plugins
+## Recommended Plugins
 Some of the stuff in Template references plugins that I use with just about every site and I recommend:
 - Advanced Custom Fields (Pro): https://www.advancedcustomfields.com
 - WP Retina 2x: https://wordpress.org/plugins/wp-retina-2x/
 - EWWW Image Optimizer: https://wordpress.org/plugins/ewww-image-optimizer/
 - Plugin Organizer: https://wordpress.org/plugins/plugin-organizer/
 - WP Migrate DB Pro: https://deliciousbrains.com/wp-migrate-db-pro/
-
 
 ###Other stuffs
 Designed by Joshua Michaels for studio.bio: http://studio.bio/template

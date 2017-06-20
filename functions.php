@@ -160,8 +160,8 @@ add_filter( 'avatar_defaults', 'new_default_avatar' );
 
 function new_default_avatar ( $avatar_defaults ) {
     //Set the URL where the image file for your avatar is located
-    $new_avatar_url = get_template_directory_uri() . '/library/images/custom-gravatar.jpg';
-    var_dump($new_avatar_url);
+    $new_avatar_url = get_stylesheet_directory_uri() . '/library/images/custom-gravatar.jpg';
+    // var_dump($new_avatar_url);
     //Set the text that will appear to the right of your avatar in Settings>>Discussion
     $avatar_defaults[$new_avatar_url] = 'Custom Avatar';
     return $avatar_defaults;
@@ -423,7 +423,7 @@ function disable_emojicons_tinymce( $plugins ) {
 // Dequeue jQuery Migrate
 add_action( 'wp_default_scripts', 'template_dequeue_jquery_migrate' );
 function template_dequeue_jquery_migrate( $scripts ) {
-  if ( ! is_admin() && ! empty( $scripts->registered['jquery'] ) ) {
+  if (! empty( $scripts->registered['jquery'] ) ) {
     $jquery_dependencies = $scripts->registered['jquery']->deps;
     $scripts->registered['jquery']->deps = array_diff( $jquery_dependencies, array( 'jquery-migrate' ) );
   }
