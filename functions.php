@@ -160,7 +160,7 @@ add_filter( 'avatar_defaults', 'new_default_avatar' );
 
 function new_default_avatar ( $avatar_defaults ) {
     //Set the URL where the image file for your avatar is located
-    $new_avatar_url = get_bloginfo( 'template_directory' ) . '/library/images/custom-gravatar.jpg';
+    $new_avatar_url = get_template_directory_uri() . '/library/images/custom-gravatar.jpg';
     var_dump($new_avatar_url);
     //Set the text that will appear to the right of your avatar in Settings>>Discussion
     $avatar_defaults[$new_avatar_url] = 'Custom Avatar';
