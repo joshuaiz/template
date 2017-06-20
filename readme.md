@@ -41,7 +41,7 @@ Some of the stuff in Template references plugins that I use with just about ever
 - Plugin Organizer: https://wordpress.org/plugins/plugin-organizer/
 - WP Migrate DB Pro: https://deliciousbrains.com/wp-migrate-db-pro/
 
-###Other stuffs
+## Other stuffs
 Designed by Joshua Michaels for studio.bio: http://studio.bio/template
 With help from Jon Iler.
 
