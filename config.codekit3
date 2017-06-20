@@ -270,6 +270,34 @@
 		"oAP": "\/library\/css\/login.css.map",
 		"oF": 0
 		},
+	"\/library\/css\/plugins\/animate.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/library\/css\/plugins\/animate-min.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/library\/css\/plugins\/animate.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 0,
+		"oAP": "\/library\/css\/plugins\/animate.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
 	"\/library\/css\/style-min.css": {
 		"aP": 1,
 		"bl": 0,
