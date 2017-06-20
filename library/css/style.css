@@ -20,10 +20,10 @@ These files are needed at the beginning so that we establish all
 our mixins, functions, and variables that we'll be using across
 the whole project.
 *********************/
-/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
-/** 1. Change the default font family in all browsers (opinionated). 2. Correct the line height in all browsers. 3. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS. */
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document ========================================================================== */
-html { font-family: sans-serif; /* 1 */ line-height: 1.15; /* 2 */ -ms-text-size-adjust: 100%; /* 3 */ -webkit-text-size-adjust: 100%; /* 3 */ }
+/** 1. Correct the line height in all browsers. 2. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS. */
+html { line-height: 1.15; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ }
 
 /* Sections ========================================================================== */
 /** Remove the margin in all browsers (opinionated). */
@@ -52,10 +52,7 @@ pre { font-family: monospace, monospace; /* 1 */ font-size: 1em; /* 2 */ }
 /** 1. Remove the gray background on active links in IE 10. 2. Remove gaps in links underline in iOS 8+ and Safari 8+. */
 a { background-color: transparent; /* 1 */ -webkit-text-decoration-skip: objects; /* 2 */ }
 
-/** Remove the outline on focused links when they are also active or hovered in all browsers (opinionated). */
-a:active, a:hover { outline-width: 0; }
-
-/** 1. Remove the bottom border in Firefox 39-. 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari. */
+/** 1. Remove the bottom border in Chrome 57- and Firefox 39-. 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari. */
 abbr[title] { border-bottom: none; /* 1 */ text-decoration: underline; /* 2 */ text-decoration: underline dotted; /* 2 */ }
 
 /** Prevent the duplicate application of `bolder` by the next rule in Safari 6. */
@@ -115,8 +112,8 @@ button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-mo
 /** Restore the focus styles unset by the previous rule. */
 button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring { outline: 1px dotted ButtonText; }
 
-/** Change the border, margin, and padding in all browsers (opinionated). */
-fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
+/** Correct the padding in Firefox. */
+fieldset { padding: 0.35em 0.75em 0.625em; }
 
 /** 1. Correct the text wrapping in Edge and IE. 2. Correct the color inheritance from `fieldset` elements in IE. 3. Remove the padding so developers are not caught out when they zero out `fieldset` elements in all browsers. */
 legend { box-sizing: border-box; /* 1 */ color: inherit; /* 2 */ display: table; /* 1 */ max-width: 100%; /* 1 */ padding: 0; /* 3 */ white-space: normal; /* 1 */ }
@@ -207,7 +204,10 @@ FONT FACE (IN YOUR FACE)
 *********************/
 /* To embed your own fonts, use this syntax and place your fonts inside the library/fonts folder. For more information on embedding fonts, go to: http://www.fontsquirrel.com/ Be sure to remove the comment brackets. */
 /*  @font-face { font-family: 'Font Name'; src: url('library/fonts/font-name.eot'); src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'), url('library/fonts/font-name.woff') format('woff'), url('library/fonts/font-name.ttf') format('truetype'), url('library/fonts/font-name.svg#font-name') format('svg'); font-weight: normal; font-style: normal; } */
-/* Commented out since WP uses system fonts now but if you can't let go I won't judge you.  */
+/*********************
+FONT STACKS
+*********************/
+/* Commented out since WP uses system fonts now but if you can't let go I won't be upset.  */
 /*
 some nice typographical defaults
 more here: http://www.newnet-soft.com/blog/csstypography
@@ -377,15 +377,6 @@ them however you see fit.
   .d-1of11 { float: left; padding-right: 0.75em; width: 9.09090909091%; }
   .d-1of12 { float: left; padding-right: 0.75em; width: 8.33%; } }
 
-.last-col { float: right; padding-right: 0 !important; }
-
-/*
-Mobile Grid Styles
-These are the widths for the mobile grid.
-There are four types, but you can add or customize
-them however you see fit.
-*/
-/* Portrait tablet to landscape */
 /*********************
 IMPORTING MODULES
 Modules are reusable blocks or elements we use throughout the project.

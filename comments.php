@@ -22,13 +22,14 @@ if ( post_password_required() ) {
           'style'             => 'div',
           'short_ping'        => true,
           'avatar_size'       => 40,
-          'callback'          => 'bones_comments',
+          'callback'          => 'template_comments',
           'type'              => 'all',
           'reply_text'        => __('Reply', 'templatetheme'),
           'page'              => '',
           'per_page'          => '',
           'reverse_top_level' => null,
-          'reverse_children'  => ''
+          'reverse_children'  => '',
+          'format'            => 'HTML5'
         ) );
       ?>
     </section>

@@ -4,8 +4,8 @@
 * 	This is the core file where most of the
 * 	theme functions & features reside.
 * 	
-* 	Developed by: Joshua Michaels for studio.bio
-* 	URL: http://studio.bio/template
+* 	Developed by: Joshua Michaels & Jon Iler for studio.bio
+* 	URL: https://studio.bio/template
 * 	
 * 	  - head cleanup (remove rsd, uri links, junk css, ect)
 * 	  - enqueueing scripts & styles
@@ -51,33 +51,33 @@ function template_head_cleanup() {
 } /* end template head cleanup */
 
 
-add_filter( 'wp_title', 'rw_title', 10, 3 );
+// add_filter( 'wp_title', 'rw_title', 10, 3 );
 
-function rw_title( $title, $sep, $seplocation )
-{
-    global $page, $paged;
+// function rw_title( $title, $sep, $seplocation )
+// {
+//     global $page, $paged;
 
-    // Don't affect in feeds.
-    if ( is_feed() )
-        return $title;
+//     // Don't affect in feeds.
+//     if ( is_feed() )
+//         return $title;
 
-    // Add the blog name
-    if ( 'right' == $seplocation )
-        $title .= get_bloginfo( 'name' );
-    else
-        $title = get_bloginfo( 'name' ) . $title;
+//     // Add the blog name
+//     if ( 'right' == $seplocation )
+//         $title .= get_bloginfo( 'name' );
+//     else
+//         $title = get_bloginfo( 'name' ) . $title;
 
-    // Add the blog description for the home/front page.
-    $site_description = get_bloginfo( 'description', 'display' );
-    if ( $site_description && ( is_home() || is_front_page() ) )
-        $title .= " {$sep} {$site_description}";
+//     // Add the blog description for the home/front page.
+//     $site_description = get_bloginfo( 'description', 'display' );
+//     if ( $site_description && ( is_home() || is_front_page() ) )
+//         $title .= " {$sep} {$site_description}";
 
-    // Add a page number if necessary:
-    if ( $paged >= 2 || $page >= 2 )
-        $title .= " {$sep} " . sprintf( __( 'Page %s', 'dbt' ), max( $paged, $page ) );
+//     // Add a page number if necessary:
+//     if ( $paged >= 2 || $page >= 2 )
+//         $title .= " {$sep} " . sprintf( __( 'Page %s', 'dbt' ), max( $paged, $page ) );
 
-    return $title;
-}
+//     return $title;
+// }
 
 // remove WP version from RSS
 function template_rss_version() { return ''; }
@@ -122,7 +122,7 @@ function template_scripts_and_styles() {
   if (!is_admin()) {
 
 		// modernizr (without media query polyfill)
-		wp_register_script( 'template-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
+		wp_register_script( 'template-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr-custom.js', array(), '3.5.0', false );
 
 		// register main stylesheet
 		wp_register_style( 'template-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
@@ -267,7 +267,6 @@ function template_theme_support() {
 		'gallery', 
 		'caption' ) 
 	);
-
 
 	/* Post Formats
 	Ahhhh yes, the wild and wonderful world of Post Formats. 
