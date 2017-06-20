@@ -206,8 +206,6 @@ function template_comments( $comment, $args, $depth ) {
 } // don't remove this bracket!
 
 
-
-
 /*
 Use this to add Google or other web fonts.
 */
