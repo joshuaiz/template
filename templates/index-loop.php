@@ -24,7 +24,6 @@
 
 			<?php get_template_part( 'templates/comment', 'count'); ?>
 
-
             <?php get_template_part( 'templates/category-tags'); ?>
 
 		</footer>
