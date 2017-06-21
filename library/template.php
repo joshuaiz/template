@@ -1,7 +1,7 @@
 <?php
 /*------------------------------------
  * Theme: Template by studio.bio 
- * File: Template dev functions file
+ * File: Template dev functions file 
  * Author: Joshua Michaels
  * URI: https://studio.bio/template
  *------------------------------------
