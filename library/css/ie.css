@@ -106,20 +106,12 @@ BOX SIZING
 /* @include box-sizing(border-box); */
 /* NOTE: value of "padding-box" is only supported in Gecko. So
 probably best not to use it. I mean, were you going to anyway? */
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: IE Grid Styles
-
-Since the example grid is based on media queries, so rather than
-setup some js library that would make IE8 and below understand
-media queries, let's just add some styles that serves a fixed grid.
-
-Again, if you want to roll your own, just remove this junk and put
-whatever you use in here.
-
-******************************************************************/
+/*--------------------------------------------------
+Flexbox SASS mixins
+The spec: http://www.w3.org/TR/css3-flexbox
+https://gist.github.com/richardtorres314/26b18e12958ba418bb37993fdcbfc1bd
+---------------------------------------------------*/
+/*@include flexbox(); */
 /******************************************************************
 Site Name:
 Author:

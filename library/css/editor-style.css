@@ -124,7 +124,11 @@ really slow down your CSS. Don't overdo it.
 *********************/ /* @include css-gradient(#dfdfdf,#f8f8f8); */ /*********************
 BOX SIZING
 *********************/ /* @include box-sizing(border-box); */ /* NOTE: value of "padding-box" is only supported in Gecko. So
-probably best not to use it. I mean, were you going to anyway? */ width: 731px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; font-size: 100%; line-height: 1.5; color: #3f3f3f; -webkit-font-smoothing: antialiased; /********************* LINK STYLES */ /****************************************************************** H1, H2, H3, H4, H5 STYLES */ padding: 1.5em 1.5em 0; /********************* LARGER MOBILE DEVICES This is for devices like the Galaxy Note or something that's larger than an iPhone but smaller than a tablet. Let's call them tweeners. */ }
+probably best not to use it. I mean, were you going to anyway? */ /*--------------------------------------------------
+Flexbox SASS mixins
+The spec: http://www.w3.org/TR/css3-flexbox
+https://gist.github.com/richardtorres314/26b18e12958ba418bb37993fdcbfc1bd
+---------------------------------------------------*/ /*@include flexbox(); */ width: 731px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; font-size: 100%; line-height: 1.5; color: #3f3f3f; -webkit-font-smoothing: antialiased; /********************* LINK STYLES */ /****************************************************************** H1, H2, H3, H4, H5 STYLES */ padding: 1.5em 1.5em 0; /********************* LARGER MOBILE DEVICES This is for devices like the Galaxy Note or something that's larger than an iPhone but smaller than a tablet. Let's call them tweeners. */ }
 
 body#tinymce.wp-editor html { line-height: 1.15; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ }
 
