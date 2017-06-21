@@ -1,5 +1,8 @@
 <?php
+
 the_archive_title( '<h1 class="page-title">', '</h1>' );
+
+// Not all themes show these but you can if you want to
 the_archive_description( '<div class="taxonomy-description">', '</div>' );
 							?>
 							
@@ -29,13 +32,12 @@ the_archive_description( '<div class="taxonomy-description">', '</div>' );
 
 		<footer class="article-footer">
 
+			<?php get_template_part( 'templates/category-tags'); ?>
+
 		</footer>
 
 	</article>
 
+<?php get_template_part( 'templates/post-navigation'); ?>
+
 <?php endwhile; endif; ?>
-
-<?php template_page_navi(); ?>
-
-							
-	

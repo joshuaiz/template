@@ -1,12 +1,18 @@
 <?php
-/*
-Author: Joshua Michaels for studio.bio
-URL: https://studio.bio/template
-
-This is where you can drop your custom functions or
-just edit things like thumbnail sizes, header images,
-sidebars, comments, etc.
-*/
+/*------------------------------------
+ * Theme: Template by studio.bio 
+ * File: Main functions file
+ * Author: Joshua Michaels
+ * URI: https://studio.bio/template
+ *------------------------------------
+ *
+ * We've moved all of the theme functions to this single
+ * file to keep things tidy. 
+ *
+ * Extra development and debugging functions can be found
+ * in template.php. Uncomment the below require_once below.
+ *
+ */
 
 
 // LOAD TEMPLATE DEVELOPMENT FUNCTIONS (not required but helper stuff for debugging and development)
@@ -246,11 +252,6 @@ function html_schema() {
 }
 
 
-// function my_update_acf_license() {
-//   acf_pro_update_license( 'b3JkZXJfaWQ9NDc2NDF8dHlwZT1wZXJzb25hbHxkYXRlPTIwMTUtMDEtMTMgMDA6NDI6MDI=' );
-// }
-// add_action('init', 'my_update_acf_license');
-
 
 /*********************
 WP_HEAD GOODNESS
@@ -284,34 +285,6 @@ function template_head_cleanup() {
 
 } /* end template head cleanup */
 
-
-// add_filter( 'wp_title', 'rw_title', 10, 3 );
-
-// function rw_title( $title, $sep, $seplocation )
-// {
-//     global $page, $paged;
-
-//     // Don't affect in feeds.
-//     if ( is_feed() )
-//         return $title;
-
-//     // Add the blog name
-//     if ( 'right' == $seplocation )
-//         $title .= get_bloginfo( 'name' );
-//     else
-//         $title = get_bloginfo( 'name' ) . $title;
-
-//     // Add the blog description for the home/front page.
-//     $site_description = get_bloginfo( 'description', 'display' );
-//     if ( $site_description && ( is_home() || is_front_page() ) )
-//         $title .= " {$sep} {$site_description}";
-
-//     // Add a page number if necessary:
-//     if ( $paged >= 2 || $page >= 2 )
-//         $title .= " {$sep} " . sprintf( __( 'Page %s', 'dbt' ), max( $paged, $page ) );
-
-//     return $title;
-// }
 
 // remove WP version from RSS
 function template_rss_version() { return ''; }
@@ -364,13 +337,16 @@ function template_scripts_and_styles() {
     // ie-only style sheet
     wp_register_style( 'template-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
 
-      // comment reply script for threaded comments
-      if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
-        wp_enqueue_script( 'comment-reply' );
-      }
+    // comment reply script for threaded comments
+    if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
+      wp_enqueue_script( 'comment-reply' );
+    }
 
     //adding scripts file in the footer
     wp_register_script( 'template-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
+
+    // Template extra scripts. Uncomment to use. Or better yet, copy what you need to the main scripts folder or on the page(s) you need it
+    // wp_register_script( 'template-extra-js', get_stylesheet_directory_uri() . '/library/js/extras/extra-scripts.js', array( 'jquery' ), '', true );
 
     // enqueue styles and scripts
     wp_enqueue_script( 'template-modernizr' );
@@ -381,6 +357,7 @@ function template_scripts_and_styles() {
 
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'template-js' );
+    // wp_enqueue_script( 'template-extra-js' );
 
   }
 }
@@ -505,7 +482,7 @@ function template_theme_support() {
   situations where they would come in handy. Here's a few
   examples: https://www.competethemes.com/blog/wordpress-post-format-examples/
 
-  If you want to use them in your project, go to town. 
+  If you want to use them in your project, do so by all means. 
   Just uncomment the function below and format the bejesus 
   out of your posts. We won't judge you.
   */
@@ -526,6 +503,7 @@ function template_theme_support() {
 
 } /* end template theme support */
 
+
 // Add WooCommerce support. This function only removes the warning in the WP Admin. To fully support WooCommerce you will need to add some stuff to your product loops. See here: https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
 add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
@@ -537,8 +515,11 @@ function woocommerce_support() {
 * CUSTOMIZER *
 ****************************************/
 
+add_action( 'customize_register', 'template_register_theme_customizer' );
+
 function template_register_theme_customizer( $wp_customize ) {
 
+  // Uncomment this to see what's going on if you make a lot of changes
   // echo '<pre>';
   // var_dump( $wp_customize );  
   // echo '</pre>';
@@ -571,9 +552,11 @@ function template_register_theme_customizer( $wp_customize ) {
   $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage'; 
 
 }
-add_action( 'customize_register', 'template_register_theme_customizer' );
 
-// Custom js for theme customizer
+
+// Custom scripts + styles for theme customizer
+add_action( 'customize_preview_init', 'template_customizer_scripts' );
+
 function template_customizer_scripts() {
   wp_enqueue_script(
     'template_theme_customizer',
@@ -581,14 +564,13 @@ function template_customizer_scripts() {
     array( 'jquery', 'customize-preview' ),
     '',
     true
-);
+  );
 
   // register customizer stylesheet
   wp_register_style( 'template-customizer', get_stylesheet_directory_uri() . '/library/css/customizer.css', array(), '', 'all' );
-
   wp_enqueue_style( 'template-customizer' );
+
 }
-add_action( 'customize_preview_init', 'template_customizer_scripts' );
 
 
 // Callback function for updating header styles
@@ -706,6 +688,8 @@ function template_excerpt_more($more) {
 // Body Class functions
 // Adds more slugs to body class so we can style individual pages + posts.
 // Page Slug Body Class
+add_filter( 'body_class', 'template_body_class' );
+
 function template_body_class( $classes ) {
 global $post;
   if ( isset( $post ) ) {
@@ -748,7 +732,6 @@ if (is_page()) {
 return $classes;
 
 }
-add_filter( 'body_class', 'template_body_class' );
 
 
 // Let's add some extra Quicktags
@@ -783,8 +766,8 @@ function template_load_dashicons() {
 }
 
 
-
-
+// Post Author function (from WP Twenty Seventeen theme)
+// We use this in the byline template part but included here in case you want to use it elsewhere.
 if ( ! function_exists( 'template_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
@@ -803,7 +786,7 @@ function template_posted_on() {
 }
 endif;
 
-
+// Post Time function (from WP Twenty Seventeen theme)
 if ( ! function_exists( 'template_time_link' ) ) :
 /**
  * Gets a nicely formatted string for the published date.
@@ -829,6 +812,7 @@ function template_time_link() {
   );
 }
 endif;
+
 
 /*****************************************
 * LET'S ROCK SOME TEMPLATE THEME OPTIONS *

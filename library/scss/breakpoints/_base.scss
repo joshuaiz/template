@@ -201,8 +201,7 @@ HEADER STYLES
 
 	#banner {
 		.header-image {
-			max-width: 100%;
-			height: auto;
+			display: block;
 		}
 	}
 
@@ -814,13 +813,6 @@ COMMENT FORM STYLES
 	}
 
 	.logged-in-as {
-		color: $meta-gray;
-		font-style: italic;
-		margin: 0;
-
-		a {
-			color: $text-color;
-		}
 	}
 
 	.comment-form-comment {

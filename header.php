@@ -31,31 +31,6 @@
 		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
         <meta name="theme-color" content="#121212">
 
-
-        <?php // Social Meta. Generate your tags here: https://megatags.co/. More examples: https://moz.com/blog/meta-data-templates-123. If you use Yoast SEO or another social meta plugin or script, you can probably delete these so you don't have duplicates which will mess up what data is grabbed for your pages. Uncomment and fill in with your data to use and be a real OG. ?>
-		
-		<!-- <meta name="description" content="Template Theme by studio.bio is a HTML5, responsive, retina-ready WordPress theme for developers.">
-		<meta name="image" content="https://template.studio.bio/images/template_logo.png">
-		
-		<meta itemprop="name" content="Template Theme by studio.bio">
-		<meta itemprop="description" content="Template Theme by studio.bio is a HTML5, responsive, retina-ready WordPress theme for developers.">
-		<meta itemprop="image" content="https://template.studio.bio/images/template_logo.png">
-		
-		<meta name="twitter:card" content="summary">
-		<meta name="twitter:title" content="Template Theme by studio.bio">
-		<meta name="twitter:description" content="Template Theme by studio.bio is a HTML5, responsive, retina-ready WordPress theme for developers.">
-		<meta name="twitter:site" content="@studio.bio">
-		<meta name="twitter:creator" content="@studio.bio">
-		<meta name="twitter:image:src" content="https://template.studio.bio/images/template_logo.png">
-		
-		<meta name="og:title" content="Template Theme by studio.bio">
-		<meta name="og:description" content="Template Theme by studio.bio is a HTML5, responsive, retina-ready WordPress theme for developers.">
-		<meta name="og:image" content="https://template.studio.bio/images/template_logo.png">
-		<meta name="og:url" content="https://template.studio.bio">
-		<meta name="og:site_name" content="Template Theme ">
-		<meta name="og:type" content="website"> -->
-
-
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 		<?php // put font scripts like Typekit here ?>
@@ -76,10 +51,8 @@
 
 		<div id="container">
 
-			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-
-				<?php // Customizer Header Image section. Uncomment to use. ?>
-				<?php if( get_header_image() != "" ) { 
+			<?php // Customizer Header Image section. Uncomment to use. ?>
+				<!-- <?php if( get_header_image() != "" ) { 
 
 					if ( is_front_page() ) { ?>
 
@@ -91,10 +64,13 @@
 
             	<?php }
 
-            	} ?>
+            	} ?> -->
+
+			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
 				<div id="inner-header" class="wrap cf">
 
+					<?php // You can use text or a logo (or both) in your header. Uncomment the below to use text. ?>
 					<!-- <div id="site-title" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></div> -->
 
 					<div id="logo" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/library/images/template_logo.png" /></a></div>

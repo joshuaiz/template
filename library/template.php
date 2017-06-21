@@ -1,11 +1,11 @@
 <?php
-/*
-Author: Joshua Michaels for studio.bio
-URL: https://studio.bio/template
-
-These are mainly internal debug functions but
-some developers may find them useful.
-*/
+/*------------------------------------
+ * Theme: Template by studio.bio 
+ * File: Template dev functions file
+ * Author: Joshua Michaels
+ * URI: https://studio.bio/template
+ *------------------------------------
+ */
 
 
 add_filter( 'template_include', 'var_template_include', 1000 );

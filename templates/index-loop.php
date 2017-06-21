@@ -30,6 +30,6 @@
 
 	</article>
 
-<?php endwhile; endif; ?>
+	<?php get_template_part( 'templates/post-navigation'); ?>
 
-<?php template_page_navi(); ?>
+<?php endwhile; endif; ?>
