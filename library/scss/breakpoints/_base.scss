@@ -60,8 +60,8 @@ style a page via class
 	.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
 .error404 {
 	.article-header {
-		text-align: center;
 		border: 0;
+		text-align: center;
 		h1 {
 			margin-bottom: 0;
 		}
@@ -70,9 +70,9 @@ style a page via class
 		text-align: center;
 		.hal {
 			position: relative;
+			margin: 0 auto;
 			width: 200px;
 			height: auto;
-			margin: 0 auto;
 			.circle:before {
 				color: yellow;
 
@@ -89,15 +89,15 @@ style a page via class
 		}
 	}
 	.search {
-		padding: 1.5em;
 		display: block;
+		padding: 1.5em;
 		text-align: center;
 		.searchform {
 			width: 100%;
 			input {
-				width: 100%;
 				margin: 0 auto;
 				margin-bottom: 1em;
+				width: 100%;
 			}
 		}
 	}
@@ -223,12 +223,8 @@ h5, .h5 {
 h6, .h6 {
 	text-transform: uppercase;
 	letter-spacing: 4.333px;
-<<<<<<< HEAD
+
 }
-=======
-	font-size: 1em;
-} 
->>>>>>> dc8b31d2d6b3cdae80e0644417a033d2b8d7441e
 
 /*********************
 LIST STYLES
