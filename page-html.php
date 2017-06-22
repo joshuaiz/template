@@ -439,9 +439,9 @@ drwxr-xr-x   3     102 Jun  4 15:59 css
       </footer>
     </section>
 							    
-							    </section>
+	</section>
 							
-							</section>
+	</section>
 			
 		
 		</section> <?php // end article section ?>
