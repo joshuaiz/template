@@ -4,19 +4,32 @@
 
 				<div id="inner-content" class="wrap cf">
 
-					<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" class="m-all t-all d-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 						<article id="post-not-found" class="hentry cf">
 
 							<header class="article-header">
 
-								<h1><?php _e( '404: Article not found', 'templatetheme' ); ?></h1>
+								<h1><?php _e( '404', 'templatetheme' ); ?></h1>
 
 							</header>
 
 							<section class="entry-content">
 
-								<p><?php _e( 'The article you were looking for was not found, but maybe try searching:', 'templatetheme' ); ?></p>
+								<div class="hal">
+
+									<img src="<?php echo get_template_directory_uri(); ?>/library/images/hal.png" alt="HAL 9000">
+
+									<div class="circle"></div>
+
+								</div>
+
+								<div class="404-txt">
+
+									<h3><?php _e( 'I\'m sorry Dave, I\'m afraid I can\'t do that.', 'templatetheme' ); ?></h3>
+									<p>We couldn't find what you are looking for, please try searching.</p>
+
+								</div>
 
 							</section>
 
@@ -27,8 +40,6 @@
 							</section>
 
 							<footer class="article-footer">
-
-									<p><?php _e( 'This is the 404.php template.', 'templatetheme' ); ?></p>
 
 							</footer>
 

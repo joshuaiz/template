@@ -42,7 +42,7 @@ HEADER STYLES
     	top: 3px;
 		img {
 			display: block;
-		}			
+		}
 	}
 
 /*********************
@@ -183,7 +183,16 @@ so we've copied them here.
 	.search-results {}              /* search result page */
 	.search-no-results {}           /* no results search page */
 	.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
-.error404 {}                      /* 404 page */
+.error404 {
+	.search {
+		display: flex;
+		justify-content: center;
+		.searchform {
+			width: 45%;
+			margin: 0;
+		}
+	}
+}                      /* 404 page */
 .single {}                        /* single post page */
 	.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
 	.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
@@ -356,4 +365,3 @@ mobile. Make sure to double check these!
 		}
 	}
 } /* end .footer-links */
-
