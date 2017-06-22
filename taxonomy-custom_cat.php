@@ -20,7 +20,7 @@
 
 						<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
-							<h1 class="archive-title h2"><span><?php _e( 'Posts Categorized:', 'templatetheme' ); ?></span> <?php single_cat_title(); ?></h1>
+							<?php get_template_part( 'templates/header', 'title'); ?>
 
 							<?php // Edit the loop in /templates/archive-loop. Or roll your own. ?>
 							<?php get_template_part( 'templates/archive', 'loop'); ?>

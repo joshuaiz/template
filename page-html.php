@@ -23,14 +23,14 @@
 
 						<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-		<header class="article-header">
+		            <header class="article-header">
 
-			<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
+			             <h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 
-			<?php // Delete or comment out if you don't need this on your page or post. Edit in /templates/byline.php ?>
-			<?php get_template_part( 'templates/byline'); ?>
+			             <?php // Delete or comment out if you don't need this on your page or post. Edit in /templates/byline.php ?>
+			             <?php get_template_part( 'templates/byline'); ?>
 
-		</header> <?php // end article header ?>
+		            </header> <?php // end article header ?>
 
 		<section class="entry-content cf" itemprop="articleBody">
 			

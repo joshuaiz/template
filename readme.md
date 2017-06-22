@@ -14,7 +14,7 @@ If you're not familiar with Bones, I highly suggest you check it out before usin
 
 I make no Bones (pun definitely intended) about Template copying a lot of what was included in Bones but wanted to customize it for my studio's workflow. This may or may not work for you.
 
-With that in mind, we've removed some things I never used in Bones (like Link Pages [why Eddie?], tags on pages and IE8 grids amongst others) and added some things in that we use often: more page templates, updated default font stack, a custom post type plugin template, and some custom functions.
+With that in mind, we've removed some things I never used in Bones (like Link Pages, tags on pages and IE8 grids amongst others) and added some things in that we use often: more page templates, updated default font stack, a custom post type plugin template, and some custom functions.
 
 We've also included some extras and goodies that developers may find useful but kept those out of the main files.
 
@@ -41,6 +41,7 @@ Template picks up where Osseous left off and takes things a bit further with 'Te
 - HTML schema support
 - updated css reset
 - default .scss classes
+
 ...and much, much more.
 
 This is the beginning for Template so we welcome improvements, comments, criticism and general feedback. I've probably made a ton of mistakes so as with anything open source, it is a work in progress.
@@ -56,11 +57,13 @@ Some of the stuff in Template references plugins that I use with just about ever
 
 ## Other stuffs
 Designed by Joshua Michaels for studio.bio: http://studio.bio/themes/template
+
 With help from Jon Iler.
 
 License: WTFPL
 License URI: http://sam.zoy.org/wtfpl/
-Do whatever the fuck you want. Freedom, baby.
+
+Do whatever you want. Freedom, baby.
 
 #### Special Thanks to:
 Eddie Machado — all credit is due to him and the original Bones collaborators: Paul Irish, Yoast, Andrew Rogers, David Dellanave and others.

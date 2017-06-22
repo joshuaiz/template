@@ -25,7 +25,7 @@
 							<?php // Edit the loop in /templates/archive-loop. Or roll your own. ?>
 							<?php get_template_part( 'templates/archive', 'loop'); ?>
 
-						</main>
+					</main>
 
 					<?php get_sidebar(); ?>
 

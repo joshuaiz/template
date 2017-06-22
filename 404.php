@@ -10,7 +10,7 @@
 
 							<header class="article-header">
 
-								<h1><?php _e( '404', 'templatetheme' ); ?></h1>
+								<?php get_template_part( 'templates/header', 'title'); ?>
 
 							</header>
 

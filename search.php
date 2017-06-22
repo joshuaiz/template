@@ -5,6 +5,7 @@
 				<div id="inner-content" class="wrap cf">
 
 					<main id="main" class="m-all t-2of3 d-5of7 cf" role="main">
+
 						<h1 class="archive-title"><span><?php _e( 'Search Results for:', 'templatetheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -13,61 +14,35 @@
 
 								<header class="entry-header article-header">
 
-									<h3 class="search-title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+									<?php get_template_part( 'templates/header', 'title'); ?>
 
-                  						<p class="byline entry-meta vcard">
-                    							<?php printf( __( 'Posted %1$s by %2$s', 'templatetheme' ),
-                   							    /* the time the post was published */
-                   							    '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
-                      							    /* the author of the post */
-                       							    '<span class="by">by</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
-                    							); ?>
-                  						</p>
+                  					<?php get_template_part( 'templates/byline'); ?>
 
 								</header>
 
 								<section class="entry-content">
-										<?php the_excerpt( '<span class="read-more">' . __( 'Read more &raquo;', 'templatetheme' ) . '</span>' ); ?>
+									
+									<?php get_template_part( 'templates/content', 'excerpt'); ?>
 
 								</section>
 
 								<footer class="article-footer">
 
-									<?php if(get_the_category_list(', ') != ''): ?>
-                  					<?php printf( __( 'Filed under: %1$s', 'templatetheme' ), get_the_category_list(', ') ); ?>
-                  					<?php endif; ?>
-
-                 					<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'templatetheme' ) . '</span> ', ', ', '</p>' ); ?>
+									<?php get_template_part( 'templates/category-tags'); ?>
 
 								</footer> <!-- end article footer -->
 
 							</article>
 
-						<?php endwhile; ?>
+							<?php get_template_part( 'templates/post-navigation'); ?>
 
-								<?php bones_page_navi(); ?>
+						<?php endwhile; endif; ?>
 
-							<?php else : ?>
+					</main>
 
-									<article id="post-not-found" class="hentry cf">
-										<header class="article-header">
-											<h1><?php _e( 'Sorry, No Results.', 'templatetheme' ); ?></h1>
-										</header>
-										<section class="entry-content">
-											<p><?php _e( 'Try your search again.', 'templatetheme' ); ?></p>
-										</section>
-										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the search.php template.', 'templatetheme' ); ?></p>
-										</footer>
-									</article>
+					<?php get_sidebar(); ?>
 
-							<?php endif; ?>
-
-						</main>
-
-							<?php get_sidebar(); ?>
-
-					</div>
+				</div>
 
 			</div>
 
