@@ -44,8 +44,6 @@
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
 
-		<?php echo '<!-- ' . get_current_template() . ' -->'; ?>
-
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">

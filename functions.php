@@ -16,7 +16,7 @@
 
 
 // LOAD TEMPLATE DEVELOPMENT FUNCTIONS (not required but helper stuff for debugging and development)
-require_once( 'library/template.php' );
+// require_once( 'library/template.php' );
 
 // CUSTOMIZE THE WORDPRESS ADMIN 
 require_once( 'library/admin.php' );

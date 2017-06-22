@@ -4,7 +4,7 @@
 
 		<header class="article-header entry-header">
 
-			<h1 class="entry-title single-title" itemprop="headline" rel="bookmark"><?php the_title(); ?></h1>
+			<?php get_template_part( 'templates/header', 'title'); ?>
 
 			<?php // Delete or comment out if you don't need this on your page or post. Edit in /templates/byline.php ?>
 			<?php get_template_part( 'templates/byline'); ?>

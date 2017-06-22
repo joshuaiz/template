@@ -23,4 +23,7 @@ function get_current_template( $echo = false ) {
         return $GLOBALS['current_theme_template'];
 }
 
+// To use, add this in your header (wrapped in php tags):
+// echo '<!-- ' . get_current_template() . ' -->'; 
+
 ?>
