@@ -59,8 +59,47 @@ style a page via class
 	.search-no-results {}           /* no results search page */
 	.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
 .error404 {
+	.article-header {
+		text-align: center;
+		border: 0;
+		h1 {
+			margin-bottom: 0;
+		}
+	}
+	.entry-content {
+		text-align: center;
+		.hal {
+			position: relative;
+			width: 200px;
+			height: auto;
+			margin: 0 auto;
+			.circle:before {
+				color: yellow;
+
+			}
+			.circle {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+  			animation: glow 1.5s linear infinite alternate;
+			}
+			img {
+				margin-bottom: 0;
+			}
+		}
+	}
 	.search {
 		padding: 1.5em;
+		display: block;
+		text-align: center;
+		.searchform {
+			width: 100%;
+			input {
+				width: 100%;
+				margin: 0 auto;
+				margin-bottom: 1em;
+			}
+		}
 	}
 }                      /* 404 page */
 .single {}                        /* single post page */
@@ -184,8 +223,12 @@ h5, .h5 {
 h6, .h6 {
 	text-transform: uppercase;
 	letter-spacing: 4.333px;
+<<<<<<< HEAD
+}
+=======
 	font-size: 1em;
 } 
+>>>>>>> dc8b31d2d6b3cdae80e0644417a033d2b8d7441e
 
 /*********************
 LIST STYLES
@@ -203,8 +246,8 @@ ul, ol {
 }
 
 .nostyle { // add this class to <ul> elements that aren't lists per se
-	margin-left: 0; 
-	padding-left: 0; 
+	margin-left: 0;
+	padding-left: 0;
 	list-style-type: none;
 }
 
@@ -236,7 +279,7 @@ NAVIGATION STYLES
 
 /* Where did the nav menu go?
 Navigation styles for mobile are now in 767down.scss
-if you need them. 
+if you need them.
 
 We almost always use the Responsive Menu plugin:
 https://wordpress.org/plugins/responsive-menu/ for mobile
@@ -250,7 +293,7 @@ POSTS & CONTENT STYLES
 *********************/
 
 #content {
-	
+
 }
 		.hentry {
 			padding-bottom: 1.5em;
@@ -898,3 +941,13 @@ FOOTER STYLES
 
 
 	.copyright {}
+
+/*********************
+CSS ANIMATION KEYFRAMES
+For the HAL 9000 404 error ;)
+*********************/
+@keyframes glow{
+  to {
+    box-shadow: 0px 0px 60px 20px #8d0005;
+  }
+}
