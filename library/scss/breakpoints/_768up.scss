@@ -4,11 +4,9 @@ Author:
 
 Stylesheet: Tablet & Small Desktop Stylesheet
 
-Here's where you can start getting into the good stuff.
-This size will work on iPads, other tablets, and desktops.
-So you can start working with more styles, background images,
-and other resources. You'll also notice the grid starts to
-come into play. Have fun!
+This stylesheet will be used for tablets and larger devices
+like desktops. The grid starts working here and you can get
+busy with more stylings.
 
 ******************************************************************/
 
@@ -32,12 +30,12 @@ HEADER STYLES
 *********************/
 
 .header {
-	// height: 76px;
+
 }
 
 	#logo {
 		display: inline-block;
-		width: 300px;
+		width: 300px; // adjust for your logo
 		margin-right: 1.5em;
 		padding: 1em 0;
 		position: relative;
@@ -51,15 +49,22 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 
-.header-nav {
+nav {}
+
+.main-menu {}
+
+.header-nav { // class on the main navigation nav element
 	display: inline-block;
 }
 
-.nav {
+.nav { // the ul element
+	margin: 0;
+	list-style-type: none;
+	padding: 0;
 	border: 0;
 	ul {
-		background:$black;
-		margin-top:0;
+		background: $black;
+		margin-top: 0;
 	}
 	li {
 		float: left;
@@ -68,6 +73,10 @@ NAVIGATION STYLES
 
 		a {
 			border-bottom: 0;
+			display: block;
+			color: $white;
+			text-decoration: none;
+			padding: 0.75em;
 
 			/*
 			you can use hover styles here even though this size
@@ -158,6 +167,11 @@ NAVIGATION STYLES
 WORDPRESS BODY CLASSES
 style a page via class
 ********************/
+
+/*
+We like having these classes for use in iPad and larger devices
+so we've copied them here.
+*/
 
 .rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
 .home {}                          /* home page */

@@ -17,6 +17,10 @@ those viewpoints.
 GENERAL STYLES
 *********************/
 
+html {
+	font-size: 1em; // 1em = 16px; Adjust if you want a different baseline.
+}
+
 body {
 	font-family: $sans;
 	font-size: 100%;
@@ -28,21 +32,15 @@ body {
   	-moz-osx-font-smoothing: grayscale;
 }
 
-img { // responsive images
+img { // responsive images by default
 	max-width: 100%;
 	height: auto;
 }
 
-.list-square {
-	list-style-type: square;
-	margin-bottom: 1.5em;
-	list-style-position: inside;
-}
-
-.nostyle { 
-	margin-left: 0; 
-	padding-left: 0; 
-	list-style-type: none;
+.intro {
+	font-size: 125%;
+	line-height: 1.4;
+	font-weight: 600;
 }
 
 /********************
@@ -60,7 +58,11 @@ style a page via class
 	.search-results {}              /* search result page */
 	.search-no-results {}           /* no results search page */
 	.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
-.error404 {}                      /* 404 page */
+.error404 {
+	.search {
+		padding: 1.5em;
+	}
+}                      /* 404 page */
 .single {}                        /* single post page */
 	.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
 	.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
@@ -126,13 +128,25 @@ a, a:visited {
 }
 
 /******************************************************************
-H1, H2, H3, H4, H5 STYLES
+HEADING STYLES
 ******************************************************************/
+
+/* While there are several frameworks for Sass web typography and
+baselines like Sassline, Megatype and Gutenberg, those all seemed
+overly complex. What I wanted was simple defaults that looked good
+out of the box without a lot of calculations and segmented mixins.
+
+After searching far and wide, I came across this:
+http://type-scale.com which we used to get our base sizes.
+
+*/
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 	text-rendering: optimizelegibility;
-	font-weight: 600;
 	color: lighten($sb-black, 12%);
+	margin: 1.333em 0 0.5em;
+  	font-weight: 500;
+  	line-height: 1.2;
 	/*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -145,47 +159,54 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 h1, .h1 {
-	font-size: 2.5em;
-	margin-top: 1.25em;
-	margin-bottom: .45em;
-	// line-height: 1.333em;
+	margin-top: 0;
+  	font-size: 3.157em;
+  	margin-bottom: 0.319em;
 }
 
 h2, .h2 {
-	font-size: 2em;
-	margin-top: 1em;
-	margin-bottom: .43em;
-	// line-height: 1.4em;
-	// margin-bottom: 0.375em;
+	margin-top: 0.88em;
+	font-size: 2.369em;
 }
 
 h3, .h3 {
-	font-size: 1.566em;
-	margin-top: 1em;
-	margin-bottom: .644em;
+	font-size: 1.777em;
 }
 
 h4, .h4 {
-	font-size: 1.233em;
-	margin-top: 1.2em;
-	margin-bottom: .56em;
+	font-size: 1.333em;
 }
 
 h5, .h5 {
-	font-size: 1.108em;
-	// line-height: 2.09em;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	margin-top: 1.333em;
-	margin-bottom: .56em;
+	font-size: 1em;
 }
 
 h6, .h6 {
 	font-size: 1em;
-	// line-height: 1.8889em;
-	margin-top: 1.4em;
-	margin-bottom: .51em;
+	text-transform: uppercase;
+	letter-spacing: 4.333px;
 } 
+
+/*********************
+LIST STYLES
+*********************/
+
+ul, ol {
+	// removes default list padding in Safari + Chrome
+	-webkit-padding-start: 20px;
+}
+
+.list-square { // add this class to your <ul> to get square bullets
+	list-style-type: square;
+	margin-bottom: 1.5em;
+	list-style-position: outside;
+}
+
+.nostyle { // add this class to <ul> elements that aren't lists per se
+	margin-left: 0; 
+	padding-left: 0; 
+	list-style-type: none;
+}
 
 /*********************
 HEADER STYLES
@@ -213,85 +234,16 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 
-/*
-all navs have a .nav class applied via
-the wp_menu function; this is so we can
-easily write one group of styles for
-the navs on the site so our css is cleaner
-and more scalable.
+/* Where did the nav menu go?
+Navigation styles for mobile are now in 767down.scss
+if you need them. 
+
+We almost always use the Responsive Menu plugin:
+https://wordpress.org/plugins/responsive-menu/ for mobile
+menus but those selectors are there if you need them.
+
+For your main navigation, styles are in 768up.scss.
 */
-
-.nav {
-	border-bottom: 0;
-	margin: 0;
-	list-style-type: none;
-	padding: 0;
-
-	li {
-
-		a {
-			display: block;
-			color: $white;
-			text-decoration: none;
-			padding: 0.75em;
-
-			/*
-			remember this is for mobile ONLY, so there's no need
-			to even declare hover styles here, you can do it in
-			the style.scss file where it's relevant. We want to
-			keep this file as small as possible!
-			*/
-			&:hover, &:focus {
-
-			}
-		}
-
-		&:first-child {}
-
-		&:last-child {}
-
-		/*
-		so you really have to rethink your dropdowns for mobile.
-		you don't want to have it expand too much because the
-		screen is so small. How you manage your menu should
-		depend on the project. Here's some great info on it:
-		http://www.alistapart.com/articles/organizing-mobile/
-		*/
-		ul.sub-menu,
-		ul.children {
-
-			li {
-
-				a {
-					padding-left: 30px;
-
-					&:hover,
-					&:focus {}
-
-					&:link {}
-
-				}
-
-				&:first-child {}
-
-				&:last-child {}
-
-			}
-
-		}
-
-	} /* end .menu li */
-
-	/* highlight current page */
-	li.current-menu-item,
-	li.current_page_item,
-	li.current_page_ancestor {
-
-		a {}
-
-	}  /* end current highlighters */
-
-} /* end .nav */
 
 
 /*********************
@@ -314,7 +266,7 @@ POSTS & CONTENT STYLES
 			}
 
 			footer {
-				padding: 1.5em;
+				padding: 1.5em 0;
 				border-top: 1px solid $light-gray;
 			}
 
@@ -424,7 +376,7 @@ POSTS & CONTENT STYLES
 			}
 
 			blockquote p {
-				margin: 0 0 1.5em;
+				margin: 0 0 1em;
 				padding: 0 0 0 0.75em;
 				border-left: 3px solid $sb-blue;
 				color: $sb-grey;
@@ -472,13 +424,18 @@ POSTS & CONTENT STYLES
 			}
 
 			pre {
-				background: #073642; // Solarized dark
-				color: #93a1a1;
-				font-family: Monaco;
-				font-size: 0.9em;
+				background: #fdf6e3; // Solarized light
+				color: #586e75;
+				font-family: monaco, Monaco, Consolas, 'Lucida Console', monospace;
+				font-size: 14px;
 				padding: 1.5em;
 				margin: 0 0 1.5em;
-				border-radius: 3px;
+				overflow-x: auto;
+    			white-space: pre;
+			}
+			code {
+				font-family: monaco, Monaco, Consolas, 'Lucida Console', monospace;
+				font-size: 14px;
 			}
 
 		} /* end .entry-content */
@@ -903,15 +860,6 @@ FOOTER STYLES
 	color: $light-gray;
 }
 
-	/*
-	if you checked out the link above:
-	http://www.alistapart.com/articles/organizing-mobile/
-	you'll want to style the footer nav
-	a bit more in-depth. Remember to keep
-	it simple because you'll have to
-	override these styles for the desktop
-	view.
-	*/
 	.footer-links {
 
 		ul {

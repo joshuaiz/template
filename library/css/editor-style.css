@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /******************************************************************
 Site Name:
 Author:
@@ -13,7 +14,7 @@ http://codex.wordpress.org/Editor_Style
 ******************************************************************/
 /* Wrap the entire post style inside the TinyMCE selector, as suggested
 here http://codex.wordpress.org/Function_Reference/add_editor_style */
-body#tinymce.wp-editor { /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */ /* Document ========================================================================== */ /** 1. Correct the line height in all browsers. 2. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS. */ /* Sections ========================================================================== */ /** Remove the margin in all browsers (opinionated). */ /** Add the correct display in IE 9-. */ /** Correct the font size and margin on `h1` elements within `section` and `article` contexts in Chrome, Firefox, and Safari. */ /* Grouping content ========================================================================== */ /** Add the correct display in IE 9-. 1. Add the correct display in IE. */ /** Add the correct margin in IE 8. */ /** 1. Add the correct box sizing in Firefox. 2. Show the overflow in Edge and IE. */ /** 1. Correct the inheritance and scaling of font size in all browsers. 2. Correct the odd `em` font sizing in all browsers. */ /* Text-level semantics ========================================================================== */ /** 1. Remove the gray background on active links in IE 10. 2. Remove gaps in links underline in iOS 8+ and Safari 8+. */ /** 1. Remove the bottom border in Chrome 57- and Firefox 39-. 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari. */ /** Prevent the duplicate application of `bolder` by the next rule in Safari 6. */ /** Add the correct font weight in Chrome, Edge, and Safari. */ /** 1. Correct the inheritance and scaling of font size in all browsers. 2. Correct the odd `em` font sizing in all browsers. */ /** Add the correct font style in Android 4.3-. */ /** Add the correct background and color in IE 9-. */ /** Add the correct font size in all browsers. */ /** Prevent `sub` and `sup` elements from affecting the line height in all browsers. */ /* Embedded content ========================================================================== */ /** Add the correct display in IE 9-. */ /** Add the correct display in iOS 4-7. */ /** Remove the border on images inside links in IE 10-. */ /** Hide the overflow in IE. */ /* Forms ========================================================================== */ /** 1. Change the font styles in all browsers (opinionated). 2. Remove the margin in Firefox and Safari. */ /** Show the overflow in IE. 1. Show the overflow in Edge. */ /** Remove the inheritance of text transform in Edge, Firefox, and IE. 1. Remove the inheritance of text transform in Firefox. */ /** 1. Prevent a WebKit bug where (2) destroys native `audio` and `video` controls in Android 4. 2. Correct the inability to style clickable types in iOS and Safari. */ /** Remove the inner border and padding in Firefox. */ /** Restore the focus styles unset by the previous rule. */ /** Correct the padding in Firefox. */ /** 1. Correct the text wrapping in Edge and IE. 2. Correct the color inheritance from `fieldset` elements in IE. 3. Remove the padding so developers are not caught out when they zero out `fieldset` elements in all browsers. */ /** 1. Add the correct display in IE 9-. 2. Add the correct vertical alignment in Chrome, Firefox, and Opera. */ /** Remove the default vertical scrollbar in IE. */ /** 1. Add the correct box sizing in IE 10-. 2. Remove the padding in IE 10-. */ /** Correct the cursor style of increment and decrement buttons in Chrome. */ /** 1. Correct the odd appearance in Chrome and Safari. 2. Correct the outline style in Safari. */ /** Remove the inner padding and cancel buttons in Chrome and Safari on macOS. */ /** 1. Correct the inability to style clickable types in iOS and Safari. 2. Change font properties to `inherit` in Safari. */ /* Interactive ========================================================================== */ /* Add the correct display in IE 9-. 1. Add the correct display in Edge, IE, and Firefox. */ /* Add the correct display in all browsers. */ /* Scripting ========================================================================== */ /** Add the correct display in IE 9-. */ /** Add the correct display in IE. */ /* Hidden ========================================================================== */ /** Add the correct display in IE 10-. */ /******************************************************************
+body#tinymce.wp-editor { /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */ /* Document ========================================================================== */ /** 1. Correct the line height in all browsers. 2. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS. */ /* Sections ========================================================================== */ /** Remove the margin in all browsers (opinionated). */ /** Add the correct display in IE 9-. */ /** Correct the font size and margin on `h1` elements within `section` and `article` contexts in Chrome, Firefox, and Safari. */ /* Grouping content ========================================================================== */ /** Add the correct display in IE 9-. 1. Add the correct display in IE. */ /** Add the correct margin in IE 8. */ /** 1. Add the correct box sizing in Firefox. 2. Show the overflow in Edge and IE. */ /** 1. Correct the inheritance and scaling of font size in all browsers. 2. Correct the odd `em` font sizing in all browsers. */ /* Normalize monospace sizing: en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome */ /* Text-level semantics ========================================================================== */ /** 1. Remove the gray background on active links in IE 10. 2. Remove gaps in links underline in iOS 8+ and Safari 8+. */ /** 1. Remove the bottom border in Chrome 57- and Firefox 39-. 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari. */ /** Prevent the duplicate application of `bolder` by the next rule in Safari 6. */ /** Add the correct font weight in Chrome, Edge, and Safari. */ /** 1. Correct the inheritance and scaling of font size in all browsers. 2. Correct the odd `em` font sizing in all browsers. */ /** Add the correct font style in Android 4.3-. */ /** Add the correct background and color in IE 9-. */ /** Add the correct font size in all browsers. */ /** Prevent `sub` and `sup` elements from affecting the line height in all browsers. */ /* Embedded content ========================================================================== */ /** Add the correct display in IE 9-. */ /** Add the correct display in iOS 4-7. */ /** Remove the border on images inside links in IE 10-. */ /** Hide the overflow in IE. */ /* Forms ========================================================================== */ /** 1. Change the font styles in all browsers (opinionated). 2. Remove the margin in Firefox and Safari. */ /** Show the overflow in IE. 1. Show the overflow in Edge. */ /** Remove the inheritance of text transform in Edge, Firefox, and IE. 1. Remove the inheritance of text transform in Firefox. */ /** 1. Prevent a WebKit bug where (2) destroys native `audio` and `video` controls in Android 4. 2. Correct the inability to style clickable types in iOS and Safari. */ /** Remove the inner border and padding in Firefox. */ /** Restore the focus styles unset by the previous rule. */ /** Correct the padding in Firefox. */ /** 1. Correct the text wrapping in Edge and IE. 2. Correct the color inheritance from `fieldset` elements in IE. 3. Remove the padding so developers are not caught out when they zero out `fieldset` elements in all browsers. */ /** 1. Add the correct display in IE 9-. 2. Add the correct vertical alignment in Chrome, Firefox, and Opera. */ /** Remove the default vertical scrollbar in IE. */ /** 1. Add the correct box sizing in IE 10-. 2. Remove the padding in IE 10-. */ /** Correct the cursor style of increment and decrement buttons in Chrome. */ /** 1. Correct the odd appearance in Chrome and Safari. 2. Correct the outline style in Safari. */ /** Remove the inner padding and cancel buttons in Chrome and Safari on macOS. */ /** 1. Correct the inability to style clickable types in iOS and Safari. 2. Change font properties to `inherit` in Safari. */ /* Interactive ========================================================================== */ /* Add the correct display in IE 9-. 1. Add the correct display in Edge, IE, and Firefox. */ /* Add the correct display in all browsers. */ /* Scripting ========================================================================== */ /** Add the correct display in IE 9-. */ /** Add the correct display in IE. */ /* Hidden ========================================================================== */ /** Add the correct display in IE 10-. */ /******************************************************************
 Site Name:
 Author:
 
@@ -33,17 +34,41 @@ Here's a great tutorial on how to
 use color variables properly:
 http://sachagreif.com/sass-color-variables/
 */ /******************************************************************
-Site Name: Template
-Author: studio.bio
+Site Name: 
+Author: 
 
 Stylesheet: Typography
 
+******************************************************************/ /*
+"Web design is 95% typography" — Oliver Reichenstein
 
-http://alistapart.com/column/responsive-typography-is-a-physical-discipline
+When that quote was made in 2006 it was before web fonts, auto-play video,
+and animated pop-ups so even if it is 65 or 75% today that is still *most* 
+of any web site's design. Understanding some of the basics of typography
+(and web typography) will go a long way.
 
-******************************************************************/ /*********************
+There are lots of web typographic systems out there however many are
+overly complex and not intuitive. Thus, we've tried to set some good
+defaults that aren't based on confounding mixins here but you may want
+to explore web typography further:
+
+https://www.smashingmagazine.com/2009/08/typographic-design-survey-best-practices-from-the-best-blogs/
+https://www.smashingmagazine.com/2012/12/css-baseline-the-good-the-bad-and-the-ugly/
+http://www.newnet-soft.com/blog/csstypography
+http://typecast.com/blog/4-simple-steps-to-vertical-rhythm
+https://github.com/StudioThick/megatype
+https://sassline.com
+http://matejlatin.github.io/Gutenberg/
+https://zellwk.com/blog/responsive-typography/
+https://github.com/zellwk/typi
+
+Note that most of the typography styles are set in base.scss with
+the html, body, and h1–h6 tags so adjust as needed. Set a good baseline
+and consider your vertical rhythm.
+
+*/ /*********************
 FONT FACE (IN YOUR FACE)
-*********************/ /* To embed your own fonts, use this syntax and place your fonts inside the library/fonts folder. For more information on embedding fonts, go to: http://www.fontsquirrel.com/ Be sure to remove the comment brackets. */ /*  @font-face { font-family: 'Font Name'; src: url('library/fonts/font-name.eot'); src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'), url('library/fonts/font-name.woff') format('woff'), url('library/fonts/font-name.ttf') format('truetype'), url('library/fonts/font-name.svg#font-name') format('svg'); font-weight: normal; font-style: normal; } */ /*********************
+*********************/ /* To embed your own fonts, use this syntax and place your fonts inside the library/fonts folder. For more information on embedding fonts, go to: http://www.fontsquirrel.com/ Be sure to remove the comment brackets. Also, you don't have to include a separate name for  each font style...just use the same name and declare each style separately. See here: http://www.newnet-soft.com/blog/csstypography */ /*  @font-face { font-family: 'Font Name'; src: url('library/fonts/font-name.eot'); src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'), url('library/fonts/font-name.woff') format('woff'), url('library/fonts/font-name.ttf') format('truetype'), url('library/fonts/font-name.svg#font-name') format('svg'); font-weight: normal; font-style: normal; } */ /*********************
 FONT STACKS
 *********************/ /* Commented out since WP uses system fonts now but if you can't let go I won't be upset.  */ /*
 some nice typographical defaults
@@ -128,6 +153,9 @@ probably best not to use it. I mean, were you going to anyway? */ /*------------
 Flexbox SASS mixins
 The spec: http://www.w3.org/TR/css3-flexbox
 https://gist.github.com/richardtorres314/26b18e12958ba418bb37993fdcbfc1bd
+
+Checkout this Flexbox guide for more info:
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 ---------------------------------------------------*/ /*@include flexbox(); */ width: 731px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; font-size: 100%; line-height: 1.5; color: #3f3f3f; -webkit-font-smoothing: antialiased; /********************* LINK STYLES */ /****************************************************************** H1, H2, H3, H4, H5 STYLES */ padding: 1.5em 1.5em 0; /********************* LARGER MOBILE DEVICES This is for devices like the Galaxy Note or something that's larger than an iPhone but smaller than a tablet. Let's call them tweeners. */ }
 
 body#tinymce.wp-editor html { line-height: 1.15; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ }
@@ -145,6 +173,10 @@ body#tinymce.wp-editor figure { margin: 1em 40px; }
 body#tinymce.wp-editor hr { box-sizing: content-box; /* 1 */ height: 0; /* 1 */ overflow: visible; /* 2 */ }
 
 body#tinymce.wp-editor pre { font-family: monospace, monospace; /* 1 */ font-size: 1em; /* 2 */ }
+
+body#tinymce.wp-editor pre, body#tinymce.wp-editor code, body#tinymce.wp-editor kbd, body#tinymce.wp-editor samp { font-family: monospace, sans-serif; }
+
+body#tinymce.wp-editor pre { /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */ white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 15px; }
 
 body#tinymce.wp-editor a { background-color: transparent; /* 1 */ -webkit-text-decoration-skip: objects; /* 2 */ }
 

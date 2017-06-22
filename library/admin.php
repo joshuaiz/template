@@ -1,18 +1,30 @@
 <?php
+/*------------------------------------
+ * Theme: Template by studio.bio 
+ * File: Admin custom functions
+ * Author: Joshua Michaels
+ * URI: https://studio.bio/template
+ *------------------------------------
+ *
+ * This file handles the admin area and functions.
+ * You can use this file to make changes to the
+ * dashboard and other adminifications.
+ *
+ */
+
+/*********************
+REMOVE DASHBOARD WIDGETS
+Clean up the Dashboard, yo.
+*********************/
+
 /*
-This file handles the admin area and functions.
-You can use this file to make changes to the
-dashboard.
-
-Developed by: Joshua Michaels for studio.bio
-URL: https://studio.bio/template
-
-
+Eddie's old function wasn't working on some widgets so I've updated it
+This cleans up a lot of the widgets on the Dashboard page. If you want
+to have any of these back, comment them out.
 */
 
-/************* DASHBOARD WIDGETS *****************/
 
-// Eddie's old function wasn't working on some widgets so I've updated it
+add_action('wp_dashboard_setup', 'template_remove_dashboard_widgets');
 
 function template_remove_dashboard_widgets() {
 
@@ -31,10 +43,11 @@ function template_remove_dashboard_widgets() {
 
 }
 
-add_action('wp_dashboard_setup', 'template_remove_dashboard_widgets');
 
-
-/************* CUSTOM LOGIN PAGE *****************/
+/*********************
+CUSTOM LOGIN PAGE
+Customize it, we don't criticize it.
+*********************/
 
 // calling your own login css so you can style it
 
@@ -56,7 +69,10 @@ add_filter( 'login_headerurl', 'template_login_url' );
 add_filter( 'login_headertitle', 'template_login_title' );
 
 
-/************* CUSTOMIZE ADMIN *******************/
+/*********************
+CUSTOMIZE ADMIN
+Customize it, and I'll advertise it.
+*********************/
 
 /*
 I don't really recommend editing the admin too much
@@ -70,12 +86,14 @@ function template_admin_css() {
 }
 add_action( 'login_enqueue_scripts', 'template_admin_css', 10 );
 
+
+
 // Custom Backend Footer
+// adding it to the admin area
+add_filter( 'admin_footer_text', 'template_custom_admin_footer' );
+
 function template_custom_admin_footer() {
 	_e( '<span id="footer-thankyou">Developed by <a href="https://studio.bio" target="_blank">studio.bio</a></span>. Built using <a href="https://studio.bio/template" target="_blank">Template</a>.', 'templatetheme' );
 }
-
-// adding it to the admin area
-add_filter( 'admin_footer_text', 'template_custom_admin_footer' );
 
 ?>
