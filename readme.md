@@ -1,5 +1,6 @@
 # Template
 https://github.com/joshuaiz/template/
+
 https://studio.bio/themes/template/
 
 ## An HTML5, lightweight, responsive, retina-ready starter WordPress theme for developers.
