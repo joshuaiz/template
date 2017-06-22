@@ -34,12 +34,12 @@ HEADER STYLES
 }
 
 	#logo {
-		display: inline-block;
-		width: 300px; // adjust for your logo
-		margin-right: 1.5em;
-		padding: 1em 0;
 		position: relative;
     	top: 3px;
+		display: inline-block;
+		margin-right: 1.5em;
+		padding: 1em 0;
+		width: 300px; // adjust for your logo
 		img {
 			display: block;
 		}
@@ -59,24 +59,24 @@ nav {}
 
 .nav { // the ul element
 	margin: 0;
-	list-style-type: none;
 	padding: 0;
 	border: 0;
+	list-style-type: none;
 	ul {
-		background: $black;
 		margin-top: 0;
+		background: $black;
 	}
 	li {
-		float: left;
 		position: relative;
+		float: left;
 		list-style: none;
 
 		a {
-			border-bottom: 0;
 			display: block;
+			padding: 0.75em;
+			border-bottom: 0;
 			color: $white;
 			text-decoration: none;
-			padding: 0.75em;
 
 			/*
 			you can use hover styles here even though this size
@@ -96,20 +96,20 @@ nav {}
 		*/
 		ul.sub-menu,
 		ul.children {
+			position: absolute;
+			z-index: 8999;
+			visibility: hidden;
 			margin-top: 0;
 			border: 1px solid #ccc;
 			border-top: 0;
-			position: absolute;
-			visibility: hidden;
-			z-index: 8999;
 
 			li {
 
 				a {
-					padding-left: 10px;
-					border-right: 0;
 					display: block;
+					padding-left: 10px;
 					width: 180px;
+					border-right: 0;
 					border-bottom: 1px solid #ccc;
 
 					&:hover,
@@ -227,13 +227,13 @@ SIDEBARS & ASIDES
 }
 
 	.widgettitle {
-		border-bottom: 2px solid #444;
 		margin-bottom: 0.75em;
+		border-bottom: 2px solid #444;
 	}
 
 	.widget {
-		padding: 0 10px;
 		margin: 2.2em 0;
+		padding: 0 10px;
 
 		ul {
 			li {
