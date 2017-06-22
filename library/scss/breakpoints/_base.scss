@@ -22,12 +22,12 @@ html {
 }
 
 body {
-	font-family: $sans;
-	font-size: 100%;
-	line-height: 1.5;
-	letter-spacing: -0.19px; // best for San Francisco font; adjust this for your typeface
-	color: $text-color;
 	background-color: $gray;
+	color: $text-color;
+	letter-spacing: -0.19px; // best for San Francisco font; adjust this for your typeface
+	font-size: 100%;
+	font-family: $sans;
+	line-height: 1.5;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
 }
@@ -38,9 +38,9 @@ img { // responsive images by default
 }
 
 .intro {
+	font-weight: 600;
 	font-size: 125%;
 	line-height: 1.4;
-	font-weight: 600;
 }
 
 /********************
@@ -93,8 +93,8 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	width: 96%;
 	margin: 0 auto;
+	width: 96%;
 }
 
 /*********************
@@ -142,11 +142,11 @@ http://type-scale.com which we used to get our base sizes.
 */
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-	text-rendering: optimizelegibility;
-	color: lighten($sb-black, 12%);
 	margin: 1.333em 0 0.5em;
+	color: lighten($sb-black, 12%);
   	font-weight: 500;
   	line-height: 1.2;
+	text-rendering: optimizelegibility;
 	/*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -160,8 +160,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 
 h1, .h1 {
 	margin-top: 0;
-  	font-size: 3.157em;
   	margin-bottom: 0.319em;
+  	font-size: 3.157em;
 }
 
 h2, .h2 {
@@ -182,9 +182,9 @@ h5, .h5 {
 }
 
 h6, .h6 {
-	font-size: 1em;
 	text-transform: uppercase;
 	letter-spacing: 4.333px;
+	font-size: 1em;
 } 
 
 /*********************
@@ -197,9 +197,9 @@ ul, ol {
 }
 
 .list-square { // add this class to your <ul> to get square bullets
-	list-style-type: square;
 	margin-bottom: 1.5em;
 	list-style-position: outside;
+	list-style-type: square;
 }
 
 .nostyle { // add this class to <ul> elements that aren't lists per se
@@ -219,7 +219,7 @@ HEADER STYLES
 	#site-title {
 		margin: 1em 0;
 		font-size: 1.5em;
-		// display: none;
+		// display: none; 
 	}
 
 	#banner {
@@ -245,7 +245,6 @@ menus but those selectors are there if you need them.
 For your main navigation, styles are in 768up.scss.
 */
 
-
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -253,16 +252,13 @@ POSTS & CONTENT STYLES
 #content {
 	
 }
-
 		.hentry {
-			background-color: $white;
-			// border-radius: 3px;
 			padding-bottom: 1.5em;
-			// border: 1px solid $border-color;
+			background-color: $white;
 
 			header {
-				border-bottom: 1px solid $light-gray;
 				padding: 1.5em;
+				border-bottom: 1px solid $light-gray;
 			}
 
 			footer {
@@ -298,9 +294,9 @@ POSTS & CONTENT STYLES
 
 		/* post meta */
 		.byline {
+			margin: 0;
 			color: $meta-gray;
 			font-style: italic;
-			margin: 0;
 
 			time {}
 		}
@@ -335,16 +331,16 @@ POSTS & CONTENT STYLES
 			}
 
 			table {
+				margin-bottom: 1.5em;
 				width: 100%;
 				border: 1px solid $gray;
-				margin-bottom: 1.5em;
 
 				caption {
 					margin: 0 0 7px;
-					font-size: 0.75em;
 					color: $meta-gray;
 					text-transform: uppercase;
 					letter-spacing: 1px;
+					font-size: 0.75em;
 				}
 			}
 
@@ -366,9 +362,9 @@ POSTS & CONTENT STYLES
 			}
 
 			th {
-				background-color: $light-gray;
-				border-bottom: 1px solid $gray;
 				border-right: 1px solid $gray;
+				border-bottom: 1px solid $gray;
+				background-color: $light-gray;
 
 				&:last-child {
 					border-right: 0;
@@ -392,10 +388,10 @@ POSTS & CONTENT STYLES
 			dt {}
 
 			dd {
-				margin-left: 0;
-				font-size: 0.9em;
-				color: #787878;
 				margin-bottom: 1.5em;
+				margin-left: 0;
+				color: #787878;
+				font-size: 0.9em;
 			}
 
 			img {
@@ -424,39 +420,39 @@ POSTS & CONTENT STYLES
 			}
 
 			pre {
+				overflow-x: auto;
+				margin: 0 0 1.5em;
+				padding: 1.5em;
 				background: #fdf6e3; // Solarized light
 				color: #586e75;
-				font-family: monaco, Monaco, Consolas, 'Lucida Console', monospace;
-				font-size: 14px;
-				padding: 1.5em;
-				margin: 0 0 1.5em;
-				overflow-x: auto;
     			white-space: pre;
+				font-size: 14px;
+				font-family: monaco, Monaco, Consolas, 'Lucida Console', monospace;
 			}
 			code {
-				font-family: monaco, Monaco, Consolas, 'Lucida Console', monospace;
 				font-size: 14px;
+				font-family: monaco, Monaco, Consolas, 'Lucida Console', monospace;
 			}
 
 		} /* end .entry-content */
 
 		.wp-caption {
+			margin-bottom: 1.5em;
+			padding: 5px;
 			max-width: 100%;
 			background: #eee;
-			padding: 5px;
-			margin-bottom: 1.5em;
 
 			/* images inside wp-caption */
 			img {
-				max-width: 100%;
 				margin-bottom: 0;
+				max-width: 100%;
 				width: 100%;
 			}
 
 			p.wp-caption-text {
-				font-size: 0.85em;
 				margin: 4px 0 7px;
 				text-align: center;
+				font-size: 0.85em;
 			}
 
 		} /* end .wp-caption */
@@ -491,6 +487,41 @@ POSTS & CONTENT STYLES
 		margin: 0;
 	}
 
+
+/******************************************************************
+SCREEN READER STYLES
+******************************************************************/
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	position: absolute !important;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	width: 1px;
+	height: 1px;
+        white-space: nowrap;
+}
+
+.screen-reader-text:focus {
+	top: 5px;
+	left: 5px;
+	z-index: 100000; /* Above WP toolbar. */
+	display: block;
+	clip: auto !important;
+	padding: 15px 23px 14px;
+	width: auto;
+	height: auto;
+	border-radius: 3px;
+	background-color: #f1f1f1;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	color: #21759b;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 0.875rem;
+	font-size: 14px;
+	line-height: normal;
+}
+
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
@@ -504,43 +535,43 @@ PAGE NAVI STYLES
 
     ul {
       display: inline-block;
+      clear: both;
+      padding: 0;
+      border-radius: 3px;
       background-color: $white;
       white-space: nowrap;
-      padding: 0;
-      clear: both;
-      border-radius: 3px;
     }
 
     li {
-      padding: 0;
-      margin: 0;
-      float: left;
       display: inline;
+      float: left;
       overflow: hidden;
+      margin: 0;
+      padding: 0;
       border-right: 1px solid $gray;
     }
 
     a, span {
+      display: block;
       margin: 0;
-      text-decoration: none;
       padding: 0;
-      line-height: 1em;
-      font-size: 1em;
-      font-weight: normal;
       padding: 0.75em;
       min-width: 1em;
-      display: block;
-      color: $blue;
+      color: $sb-blue;
+      text-decoration: none;
+      font-weight: normal;
+      font-size: 1em;
+      line-height: 1em;
 
       &:hover, &:focus {
-      	background-color: $blue;
+      	background-color: $sb-dark-blue;
       	color: $white;
       }
     }
 
     .current{
-    	cursor: default;
     	color: $text-color;
+    	cursor: default;
 
     	&:hover, &:focus {
     		background-color: $white;
@@ -571,8 +602,8 @@ COMMENT STYLES
 
 /* h3 comment title */
 #comments-title {
-	padding: 0.75em;
 	margin: 0;
+	padding: 0.75em;
 	border-top: 1px solid $light-gray;
 
 	/* number of comments span */
@@ -588,7 +619,6 @@ COMMENT STYLES
 
 	}
 }
-
 
 .commentlist {
 	margin: 0;
@@ -621,8 +651,8 @@ COMMENT STYLES
 
 		time {
 			display: block;
-			font-size: 0.9em;
 			font-style: italic;
+			font-size: 0.9em;
 
 			a {
 				color: $meta-gray;
@@ -673,8 +703,8 @@ COMMENT STYLES
 	}
 
 	&.depth-1 {
-		margin-left: 0;
 		margin-top: 0;
+		margin-left: 0;
 	}
 
 	&:not(.depth-1) {
@@ -709,8 +739,6 @@ COMMENT STYLES
 }
 
 
-
-
 	/* comment meta */
 	.comment-meta {
 
@@ -738,8 +766,8 @@ COMMENT STYLES
 	/* comment reply link */
 	.comment-reply-link {
 		@extend .blue-btn;
-		font-size: 0.9em;
 		float: right;
+		font-size: 0.9em;
 
 		&:hover,
 		&:focus {
@@ -749,13 +777,11 @@ COMMENT STYLES
 
 	/* edit comment link */
 	.comment-edit-link {
-		font-style: italic;
 		margin: 0 7px;
 		text-decoration: none;
+		font-style: italic;
 		font-size: 0.9em;
 	}
-
-
 
 /******************************************************************
 COMMENT FORM STYLES
@@ -844,10 +870,10 @@ SIDEBARS & ASIDES
 	}
 
 	.no-widgets {
-		background-color: $white;
+		margin-bottom: 1.5em;
 		padding: 1.5em;
 		border-radius: 2px;
-		margin-bottom: 1.5em;
+		background-color: $white;
 	}
 
 /*********************

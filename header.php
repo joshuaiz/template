@@ -16,10 +16,11 @@
 		<meta name="MobileOptimized" content="320">
 		<meta name=viewport content="width=device-width, initial-scale=1">
 
-		<?php // Apple touch icons (see here: https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html) ?>
-		<link rel="apple-touch-icon" href="touch-icon-iphone.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad.png">
+		<?php // https://sympli.io/blog/2017/02/15/heres-everything-you-need-to-know-about-favicons-in-2017/ ?>
+		<link rel="apple-touch-icon" href="older-iPhone.png"> <?php // 120px ?>  
+		<link rel="apple-touch-icon" sizes="180x180" href="iPhone-6-Plus.png">  
+		<link rel="apple-touch-icon" sizes="152x152" href="iPad-Retina.png">  
+		<link rel="apple-touch-icon" sizes="167x167" href="iPad-Pro.png">
 
 		<?php // favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
 		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">

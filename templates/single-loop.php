@@ -12,6 +12,11 @@
 		</header> <?php // end article header ?>
 
         <section class="entry-content cf" itemprop="articleBody">
+
+        	<?php if ( has_post_format()) { 
+        		get_template_part( 'format', get_post_format() ); 
+        	}
+        	?>
         
         	<?php the_content(); ?>
 

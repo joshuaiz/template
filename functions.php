@@ -100,9 +100,9 @@ add_filter( 'image_size_names_choose', 'template_custom_image_sizes' );
 
 function template_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'template-image-600' => __('600px by 600px'),
-        'template-image-300' => __('300px by 300px'),
-        'template-image-150' => __('150px by 150px'),
+        'template-image-600' => __('600px by 600px', 'templatetheme'),
+        'template-image-300' => __('300px by 300px', 'templatetheme'),
+        'template-image-150' => __('150px by 150px', 'templatetheme'),
     ) );
 }
 
@@ -362,7 +362,6 @@ function template_scripts_and_styles() {
   }
 }
 
-
 /****************************************
 * REMOVE WP EXTRAS *
 ****************************************/
@@ -482,29 +481,37 @@ function template_theme_support() {
   situations where they would come in handy. Here's a few
   examples: https://www.competethemes.com/blog/wordpress-post-format-examples/
 
+  This theme doesn't use post formats per se but we need this 
+  to pass the theme check.
+
+  We may add better support for post formats in the future.
+
   If you want to use them in your project, do so by all means. 
-  Just uncomment the function below and format the bejesus 
-  out of your posts. We won't judge you.
+  We won't judge you.
   */
 
-  // add_theme_support( 'post-formats',
-  //  array(
-  //    'aside',             // title less blurb
-  //    'gallery',           // gallery of images
-  //    'link',              // quick link to other site
-  //    'image',             // an image
-  //    'quote',             // a quick quote
-  //    'status',            // a Facebook like status update
-  //    'video',             // video
-  //    'audio',             // audio
-  //    'chat'               // chat transcript
-  //  )
-  // );
+  add_theme_support( 'post-formats',
+   array(
+     'aside',             // title less blurb
+     'gallery',           // gallery of images
+     'link',              // quick link to other site
+     'image',             // an image
+     'quote',             // a quick quote
+     'status',            // a Facebook like status update
+     'video',             // video
+     'audio',             // audio
+     'chat'               // chat transcript
+   )
+  );
 
 } /* end template theme support */
 
 
-// Add WooCommerce support. This function only removes the warning in the WP Admin. To fully support WooCommerce you will need to add some stuff to your product loops. See here: https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
+/* Add WooCommerce support. This function only removes the warning 
+in the WP admin when WooCommerce is installed. To fully support
+WooCommerce you will need to add some stuff to your product loops.
+See here: https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
+*/
 add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
     add_theme_support( 'woocommerce' );
@@ -525,26 +532,26 @@ function template_register_theme_customizer( $wp_customize ) {
   // echo '</pre>';
 
   // Customize title and tagline sections and labels
-  $wp_customize->get_section('title_tagline')->title = __('Site Name and Description', 'templatethemecustomizer');  
-  $wp_customize->get_control('blogname')->label = __('Site Name', 'templatethemecustomizer');  
-  $wp_customize->get_control('blogdescription')->label = __('Site Description', 'templatethemecustomizer');  
+  $wp_customize->get_section('title_tagline')->title = __('Site Name and Description', 'templatetheme');  
+  $wp_customize->get_control('blogname')->label = __('Site Name', 'templatetheme');  
+  $wp_customize->get_control('blogdescription')->label = __('Site Description', 'templatetheme');  
   $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
   $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 
   // Customize the Front Page Settings
-  $wp_customize->get_section('static_front_page')->title = __('Homepage Preferences', 'templatethemecustomizer');
+  $wp_customize->get_section('static_front_page')->title = __('Homepage Preferences', 'templatetheme');
   $wp_customize->get_section('static_front_page')->priority = 20;
-  $wp_customize->get_control('show_on_front')->label = __('Choose Homepage Preference:', 'templatethemecustomizer');  
-  $wp_customize->get_control('page_on_front')->label = __('Select Homepage:', 'templatethemecustomizer');  
-  $wp_customize->get_control('page_for_posts')->label = __('Select Blog Homepage:', 'templatethemecustomizer');  
+  $wp_customize->get_control('show_on_front')->label = __('Choose Homepage Preference:', 'templatetheme');  
+  $wp_customize->get_control('page_on_front')->label = __('Select Homepage:', 'templatetheme');  
+  $wp_customize->get_control('page_for_posts')->label = __('Select Blog Homepage:', 'templatetheme');  
 
   // Customize Background Settings
-  $wp_customize->get_section('background_image')->title = __('Background Styles', 'templatethemecustomizer');  
+  $wp_customize->get_section('background_image')->title = __('Background Styles', 'templatetheme');  
   $wp_customize->get_control('background_color')->section = 'background_image'; 
 
   // Customize Header Image Settings  
   $wp_customize->add_section( 'header_text_styles' , array(
-    'title'      => __('Header Text Styles','templatethemecustomizer'), 
+    'title'      => __('Header Text Styles','templatetheme'), 
     'priority'   => 30    
   ) );
   $wp_customize->get_control('display_header_text')->section = 'header_text_styles';  
@@ -807,70 +814,10 @@ function template_time_link() {
   // Wrap the time string in a link, and preface it with 'Posted on'.
   return sprintf(
     /* translators: %s: post date */
-    __( '<span class="screen-reader-text">Posted on</span> %s', 'twentyseventeen' ),
+    __( '<span class="screen-reader-text">Posted on</span> %s', 'templatetheme' ),
     '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
   );
 }
 endif;
 
-
-/*****************************************
-* LET'S ROCK SOME TEMPLATE THEME OPTIONS *
-
-Adds option page to admin and admin menu
-Uncomment to use. I have a basic Google Web
-Font chooser which relies on Advanced Custom 
-Fields Pro.
-*****************************************/
-
-
-// 
-// if( function_exists('acf_add_options_page') ) {
-  
-//   acf_add_options_page(array(
-//     'page_title'  => 'Osseous Theme Settings',
-//     'menu_title'  => 'Theme Settings',
-//     'menu_slug'   => 'theme-general-settings',
-//     'capability'  => 'manage_options',
-//     'redirect'    => false
-//   ));
-  
-// }
-
-// Let's keep the options for the admins, k? Uncomment to use
-// if( function_exists('acf_set_options_page_capability') )
-// {
-//     acf_set_options_page_capability( 'manage_options' );
-// }
-
-// Allow site admin to change fonts. Uncomment to use
-// add_filter( 'acfgfs/font_dropdown_array', 'my_font_list' );
-// function my_font_list( $fonts ) {
-//     $fonts = array(
-//         'Allerta' => 'Allerta',
-//    'Arvo' => 'Arvo',
-//    'Crimson Text' => 'Crimson Text',
-//    'Domine' => 'Domine',
-//    'Droid Sans' => 'Droid Sans',
-//    'Droid Serif' => 'Droid Serif',
-//    'Fjalla One' => 'Fjalla One',
-//    'Lato' => 'Lato',
-//    'Montserrat' => 'Montserrat',
-//    'Noto Serif' => 'Noto Serif',
-//    'Open Sans' => 'Open Sans',
-//    'Oswald' => 'Oswald',
-//    'Playfair Display' => 'Playfair Display',
-//    'PT Sans' => 'PT Sans',
-//    'PT Serif' => 'PT Serif',
-//    'Raleway' => 'Raleway',
-//    'Rambla' => 'Rambla',
-//    'Roboto' => 'Roboto',
-//    'Ubuntu' => 'Ubuntu',
-//    'Vollkorn' => 'Vollkorn',
-    // Add your own fonts to the list
-//     );
-//     return $fonts;
-// }
-
-/* DON'T DELETE THIS CLOSING TAG */ 
 ?>
