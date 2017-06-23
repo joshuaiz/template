@@ -59,7 +59,7 @@ Some of the stuff in Template references plugins that I use with just about ever
 ## Other stuffs
 Designed by Joshua Michaels for studio.bio: http://studio.bio/themes/template
 
-With help from Jon Iler.
+With help from @joniler.
 
 License: WTFPL
 License URI: http://sam.zoy.org/wtfpl/
@@ -67,7 +67,7 @@ License URI: http://sam.zoy.org/wtfpl/
 Do whatever you want. Freedom, baby.
 
 #### Special Thanks to:
-Eddie Machado — all credit is due to him and the original Bones collaborators: Paul Irish, Yoast, Andrew Rogers, David Dellanave and others.
+@eddiemachado — all credit is due to him and the original Bones collaborators: Paul Irish, Yoast, Andrew Rogers, David Dellanave and others.
 
 
 #### Submit Bugs & or Fixes:
