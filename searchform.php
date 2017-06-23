@@ -1,8 +1,19 @@
-<form role="search" method="get" id="searchform" class="searchform" action="<?php echo home_url( '/' ); ?>">
-    <div>
-        <label for="s" class="screen-reader-text"><?php _e('Search for:','templatetheme'); ?></label>
-        <input type="search" id="s" name="s" value="" />
+<?php
+/*
+* This is the basic search form that will get shown when you use get_search_form() anywhere in your theme.
+* Updated with new HTMl5 goodness.
+*
+*/
+?>
 
-        <button type="submit" id="searchsubmit" ><?php _e('Search','templatetheme'); ?></button>
-    </div>
+<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+    <label>
+        <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
+        <input type="search" class="search-field"
+            placeholder="<?php echo esc_attr_x( 'Search …', 'placeholder' ) ?>"
+            value="<?php echo get_search_query() ?>" name="s"
+            title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
+    </label>
+    <input type="submit" class="search-submit"
+        value="<?php echo esc_attr_x( 'Search', 'submit button' ) ?>" />
 </form>
